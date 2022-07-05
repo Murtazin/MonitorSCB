@@ -26,7 +26,8 @@ final class MainCoordinator: Coordinator {
     var childDependencies: CoordinatorDependencies
     weak var navigationController: UINavigationController?
     
-    init(navigationController: UINavigationController, childDependencies: CoordinatorDependencies = DefaultCoordinatorDependencies()) {
+    init(navigationController: UINavigationController,
+         childDependencies: CoordinatorDependencies = DefaultCoordinatorDependencies()) {
         self.navigationController = navigationController
         self.childDependencies = childDependencies
     }
@@ -37,11 +38,15 @@ final class MainCoordinator: Coordinator {
         
         switch isUserLogged {
         case true:
-            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
+                                                                  navigationController,
+                                                                  flowListener: self)
             childDependencies.add(dependency: mainScreenCoordinator)
             mainScreenCoordinator.start()
         case false:
-            let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+            let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
+                                                                  navigationController,
+                                                                  flowListener: self)
             childDependencies.add(dependency: authScreenCoordinator)
             authScreenCoordinator.start()
         }

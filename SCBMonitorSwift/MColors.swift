@@ -7,7 +7,7 @@
 
 import UIKit
 
-//Use NameThatColor webSite for naming color
+// Use NameThatColor webSite for naming color
 
 struct MColors {
     

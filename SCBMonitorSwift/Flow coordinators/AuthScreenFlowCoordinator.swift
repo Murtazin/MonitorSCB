@@ -33,7 +33,6 @@ final class AuthScreenFlowCoordinator: Coordinator {
     }
 }
 
-
 // MARK: - CoordinatorFlowListener
 extension AuthScreenFlowCoordinator: CoordinatorFlowListener {
     

@@ -22,7 +22,7 @@ final class AuthViewController: UIViewController {
                 
         view.backgroundColor = MColors.white
         
-        //For example UI
+        // For example UI
         defaultButton.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
         view.addSubview(defaultButton)
         NSLayoutConstraint.activate([
@@ -32,7 +32,6 @@ final class AuthViewController: UIViewController {
             view.rightAnchor.constraint(equalTo: defaultButton.rightAnchor, constant: 16)
         ])
     }
-    
     
     // MARK: - Objc
     @objc func buttonDidTap() {
