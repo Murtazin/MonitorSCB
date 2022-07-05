@@ -36,7 +36,7 @@ private extension DefaultButton {
     }
     
     func setup() {
-        backgroundColor = MColors._nameIt
+        backgroundColor = MColors.spray
         layer.cornerRadius = Const.height / 2 
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale

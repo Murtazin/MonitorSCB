@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthViewController.swift
 //  SCBMonitorSwift
 //
 //  Created by ANTON DOBRYNIN on 04.07.2022.
@@ -7,28 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class AuthViewController: UIViewController {
     
-    private let helloLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Hello"
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        return label
-    }()
-    
+    weak var authScreenFlowCoordinatorHandler: AuthScreenFlowCoordinatorHandler?
+
     private let defaultButton: DefaultButton = {
         let button = DefaultButton()
-        button.setTitle("Старт", for: .normal)
+        button.setTitle("Логин", for: .normal)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        view.backgroundColor = MColors.white
         
-        view.backgroundColor = .white
-            
-        //For example UI 
+        //For example UI
+        defaultButton.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
         view.addSubview(defaultButton)
         NSLayoutConstraint.activate([
             defaultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -37,5 +32,11 @@ class ViewController: UIViewController {
             view.rightAnchor.constraint(equalTo: defaultButton.rightAnchor, constant: 16)
         ])
     }
+    
+    
+    // MARK: - Objc
+    @objc func buttonDidTap() {
+        // after business logic
+        authScreenFlowCoordinatorHandler?.didSuccessLogin()
+    }
 }
-

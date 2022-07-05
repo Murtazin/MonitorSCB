@@ -8,26 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529830E2872FFC7004466E8 /* AppDelegate.swift */; };
-		452983132872FFC7004466E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452983122872FFC7004466E8 /* ViewController.swift */; };
 		452983182872FFCA004466E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452983172872FFCA004466E8 /* Assets.xcassets */; };
 		4529831B2872FFCA004466E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452983192872FFCA004466E8 /* LaunchScreen.storyboard */; };
-		4529832728730B3B004466E8 /* PersonalCabinetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832628730B3B004466E8 /* PersonalCabinetViewController.swift */; };
-		4529832928730B43004466E8 /* PersonalCabinetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832828730B42004466E8 /* PersonalCabinetModel.swift */; };
+		4529832728730B3B004466E8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832628730B3B004466E8 /* AuthViewController.swift */; };
+		4529832928730B43004466E8 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832828730B42004466E8 /* AuthModel.swift */; };
 		4529832B28730B81004466E8 /* MColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832A28730B81004466E8 /* MColors.swift */; };
 		4529832E28730D31004466E8 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529832D28730D31004466E8 /* DefaultButton.swift */; };
+		455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF37A2874240800D18B57 /* MainCoordinator.swift */; };
+		455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF37C2874248B00D18B57 /* CoordinatorDependencies.swift */; };
+		455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF37F287424F900D18B57 /* MainScreenViewController.swift */; };
+		455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3812874250300D18B57 /* MainScreenModel.swift */; };
+		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
+		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4529830B2872FFC7004466E8 /* SCBMonitorSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBMonitorSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4529830E2872FFC7004466E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		452983122872FFC7004466E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		452983172872FFCA004466E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4529831A2872FFCA004466E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4529831C2872FFCA004466E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4529832628730B3B004466E8 /* PersonalCabinetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCabinetViewController.swift; sourceTree = "<group>"; };
-		4529832828730B42004466E8 /* PersonalCabinetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCabinetModel.swift; sourceTree = "<group>"; };
+		4529832628730B3B004466E8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		4529832828730B42004466E8 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		4529832A28730B81004466E8 /* MColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MColors.swift; sourceTree = "<group>"; };
 		4529832D28730D31004466E8 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		455DF37A2874240800D18B57 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		455DF37C2874248B00D18B57 /* CoordinatorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDependencies.swift; sourceTree = "<group>"; };
+		455DF37F287424F900D18B57 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		455DF3812874250300D18B57 /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
+		455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowCoordinator.swift; sourceTree = "<group>"; };
+		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,10 @@
 		4529830D2872FFC7004466E8 /* SCBMonitorSwift */ = {
 			isa = PBXGroup;
 			children = (
+				455DF38D28743FDF00D18B57 /* Extensions */,
+				455DF379287423F500D18B57 /* Flow coordinators */,
 				4529832328730A9E004466E8 /* Core */,
 				4529832228730A98004466E8 /* Screens */,
-				4529832428730AB5004466E8 /* Coordinator */,
 				452983172872FFCA004466E8 /* Assets.xcassets */,
 				4529832A28730B81004466E8 /* MColors.swift */,
 			);
@@ -73,7 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				4529832C28730CF7004466E8 /* Controls */,
-				4529832528730ACA004466E8 /* PersonalCabinet */,
+				455DF37E287424EC00D18B57 /* MainScreen */,
+				4529832528730ACA004466E8 /* Auth */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -84,25 +96,17 @@
 				4529831C2872FFCA004466E8 /* Info.plist */,
 				452983192872FFCA004466E8 /* LaunchScreen.storyboard */,
 				4529830E2872FFC7004466E8 /* AppDelegate.swift */,
-				452983122872FFC7004466E8 /* ViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		4529832428730AB5004466E8 /* Coordinator */ = {
+		4529832528730ACA004466E8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				4529832628730B3B004466E8 /* AuthViewController.swift */,
+				4529832828730B42004466E8 /* AuthModel.swift */,
 			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		4529832528730ACA004466E8 /* PersonalCabinet */ = {
-			isa = PBXGroup;
-			children = (
-				4529832628730B3B004466E8 /* PersonalCabinetViewController.swift */,
-				4529832828730B42004466E8 /* PersonalCabinetModel.swift */,
-			);
-			path = PersonalCabinet;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		4529832C28730CF7004466E8 /* Controls */ = {
@@ -111,6 +115,41 @@
 				4529832D28730D31004466E8 /* DefaultButton.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		455DF379287423F500D18B57 /* Flow coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				455DF3852874293E00D18B57 /* Core */,
+				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
+				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
+			);
+			path = "Flow coordinators";
+			sourceTree = "<group>";
+		};
+		455DF37E287424EC00D18B57 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				455DF37F287424F900D18B57 /* MainScreenViewController.swift */,
+				455DF3812874250300D18B57 /* MainScreenModel.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		455DF3852874293E00D18B57 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				455DF37C2874248B00D18B57 /* CoordinatorDependencies.swift */,
+				455DF37A2874240800D18B57 /* MainCoordinator.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		455DF38D28743FDF00D18B57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +222,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4529832928730B43004466E8 /* PersonalCabinetModel.swift in Sources */,
+				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
+				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
+				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
+				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
-				4529832728730B3B004466E8 /* PersonalCabinetViewController.swift in Sources */,
-				452983132872FFC7004466E8 /* ViewController.swift in Sources */,
+				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
+				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
+				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
+				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
