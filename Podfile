@@ -7,4 +7,6 @@ target 'SCBMonitorSwift' do
 
   # Pods for SCBMonitorSwift
 
+  pod 'SnapKit'
+
 end
