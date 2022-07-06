@@ -21,6 +21,9 @@
 		455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3812874250300D18B57 /* MainScreenModel.swift */; };
 		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
 		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
+		A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */; };
+		A21847B02875AA1800787D4C /* DeviceRentalMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847AF2875AA1800787D4C /* DeviceRentalMainView.swift */; };
+		A21847B22875B78900787D4C /* DeviceRentalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847B12875B78900787D4C /* DeviceRentalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBMonitorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalMainViewController.swift; sourceTree = "<group>"; };
+		A21847AF2875AA1800787D4C /* DeviceRentalMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalMainView.swift; sourceTree = "<group>"; };
+		A21847B12875B78900787D4C /* DeviceRentalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,7 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A21847A72875A95C00787D4C /* DeviceRental */,
 				4529832C28730CF7004466E8 /* Controls */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
 				4529832528730ACA004466E8 /* Auth */,
@@ -166,6 +173,24 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A21847A72875A95C00787D4C /* DeviceRental */ = {
+			isa = PBXGroup;
+			children = (
+				A21847AD2875A9D200787D4C /* Main */,
+			);
+			path = DeviceRental;
+			sourceTree = "<group>";
+		};
+		A21847AD2875A9D200787D4C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */,
+				A21847AF2875AA1800787D4C /* DeviceRentalMainView.swift */,
+				A21847B12875B78900787D4C /* DeviceRentalCollectionViewCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E51FC1149C390DEFC4E82622 /* Frameworks */ = {
@@ -310,12 +335,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
+				A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
+				A21847B22875B78900787D4C /* DeviceRentalCollectionViewCell.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
+				A21847B02875AA1800787D4C /* DeviceRentalMainView.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
