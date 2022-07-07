@@ -5,29 +5,34 @@ protocol DeviceRentalMainViewDelegateProtocol: AnyObject {
 }
 
 class DeviceRentalMainView: UIView {
+    // MARK: - Data
+    var iOSDevices = [
+        Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free"), Device(image: UIImage(named: "image"), title: "iPhone", subtitle: "Free")
+    ]
+    var androidDevices = [
+        Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy"), Device(image: UIImage(named: "image1"), title: "Samsung", subtitle: "Busy")
+    ]
+    
     // MARK: - Properties
     
     weak var delegate: DeviceRentalMainViewDelegateProtocol?
     // MARK: - UI
     
-    lazy var segmentControlView: UISegmentedControl = {
+    lazy var segmentedControlView: UISegmentedControl = {
         let items = ["IOS", "Android"]
         let view = UISegmentedControl(items: items)
-        view.selectedSegmentTintColor = UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1.0)
-        view.tintColor = UIColor(red: 223.0 / 255, green: 223.0 / 255, blue: 223.0 / 255, alpha: 1.0)
         view.selectedSegmentIndex = 0
         view.addTarget(self, action: #selector(segmentDidChanged(_:)), for: .valueChanged)
+        view.addUnderlineForSelectedSegment()
         return view
     }()
     
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .systemBackground
-        view.register(DeviceRentalCollectionViewCell.self, forCellWithReuseIdentifier: DeviceRentalCollectionViewCell.reuseId)
+    lazy var tableView: UITableView = {
+        let view = UITableView()
         view.delegate = self
         view.dataSource = self
+        view.register(DeviceRentalTableViewCell.self, forCellReuseIdentifier: DeviceRentalTableViewCell.reuseIdentifier)
+        view.separatorStyle = .none
         return view
     }()
     // MARK: - Overrided
@@ -49,50 +54,62 @@ class DeviceRentalMainView: UIView {
     
     private func setUpView() {
         self.backgroundColor = .systemBackground
-        self.addSubview(segmentControlView)
-        self.addSubview(collectionView)
+        self.addSubview(segmentedControlView)
+        self.addSubview(tableView)
     }
     
     private func setUpConstraints() {
-        segmentControlView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControlView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            segmentControlView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
-            segmentControlView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            segmentControlView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
-        ])
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            collectionView.topAnchor.constraint(equalTo: segmentControlView.bottomAnchor, constant: 16),
-            collectionView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: 16)
+            segmentedControlView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            segmentedControlView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            segmentedControlView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            segmentedControlView.heightAnchor.constraint(equalToConstant: 50),
+            tableView.topAnchor.constraint(equalTo: segmentedControlView.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     // MARK: - OBJC functions
     
     @objc private func segmentDidChanged(_ sender: UISegmentedControl) {
+        segmentedControlView.changeUnderlinePosition()
+        tableView.reloadData()
         delegate?.segmentDidChanged()
     }
 }
-// MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UITableViewDataSource
 
-extension DeviceRentalMainView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: 100)
-    }
-}
-// MARK: -
-
-extension DeviceRentalMainView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+extension DeviceRentalMainView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if segmentedControlView.selectedSegmentIndex == 0 {
+            return iOSDevices.count
+        } else {
+            return androidDevices.count
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeviceRentalCollectionViewCell.reuseId, for: indexPath) as? DeviceRentalCollectionViewCell else {
-            return UICollectionViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DeviceRentalTableViewCell.reuseIdentifier, for: indexPath) as? DeviceRentalTableViewCell else {
+            return UITableViewCell()
         }
-        return cell
+        if segmentedControlView.selectedSegmentIndex == 0 {
+            let model = iOSDevices[indexPath.row]
+            cell.configureCell(by: model.image, title: model.title, subtitle: model.subtitle)
+            return cell
+        } else {
+            let model = androidDevices[indexPath.row]
+            cell.configureCell(by: model.image, title: model.title, subtitle: model.subtitle)
+            return cell
+        }
+    }
+}
+// MARK: - UITableViewDelegate
+
+extension DeviceRentalMainView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
