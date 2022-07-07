@@ -85,4 +85,8 @@ class DeviceRentalTableViewCell: UITableViewCell {
         self.deviceTitleLabel.text = title
         self.deviceStatusLabel.text = subtitle
     }
+    
+    func deviceStatusDidChanged(_ color: UIColor) {
+        self.view.backgroundColor = color
+    }
 }

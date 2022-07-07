@@ -2,7 +2,10 @@ import Foundation
 import UIKit
 
 struct Device {
-    let image: UIImage?
-    let title: String
-    let subtitle: String
+    var id: Int
+    var operatingSystem: String
+    var image: UIImage?
+    var title: String
+    var subtitle: String
+    var isAmusing: Bool
 }
