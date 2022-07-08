@@ -1,4 +1,10 @@
-import Foundation
+//
+//  DeviceRentalViewController.swift
+//  SCBMonitorSwift
+//
+//  Created by Renat Murtazin on 07.07.22.
+//
+
 import UIKit
 
 enum OperatingSystem {
@@ -7,7 +13,7 @@ enum OperatingSystem {
 }
 
 struct Device {
-    var id: Int
+    let id: Int
     var operatingSystem: OperatingSystem
     var image: UIImage?
     var title: String

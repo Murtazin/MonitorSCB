@@ -1,7 +1,14 @@
+//
+//  DeviceRentalViewController.swift
+//  SCBMonitorSwift
+//
+//  Created by Renat Murtazin on 07.07.22.
+//
+
 import UIKit
 
 protocol CustomSegmentedControlDelegate: AnyObject {
-    func change(to index:Int)
+    func change(to index: Int)
 }
 
 final class CustomSegmentedControl: UIView {
@@ -30,6 +37,7 @@ final class CustomSegmentedControl: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        
         updateView()
     }
     // MARK: - Functions
@@ -61,7 +69,7 @@ final class CustomSegmentedControl: UIView {
                 selectedIndex = buttonIndex
                 delegate?.change(to: selectedIndex)
                 
-                UIView.animate(withDuration: 0.3) {
+                UIView.animate(withDuration: 0.01) {
                     self.selectorView.frame.origin.x = selectorPosition
                     self.unSelectorView.frame.origin.x = unSelectorPosition
                 }
