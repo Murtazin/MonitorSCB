@@ -12,5 +12,5 @@ struct Device {
     var image: UIImage?
     var title: String
     var subtitle: String
-    var isAmusing: Bool
+    var isBusy: Bool
 }
