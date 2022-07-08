@@ -4,8 +4,8 @@ class DeviceRentalTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     static let reuseIdentifier = "deviceRentalTableViewCell"
-    
     // MARK: - UI
+    
     private lazy var view: UIView = {
         let view = UIView()
         view.layer.borderColor = CGColor(red: 235.0 / 255, green: 232.0 / 255, blue: 252.0 / 255, alpha: 1)

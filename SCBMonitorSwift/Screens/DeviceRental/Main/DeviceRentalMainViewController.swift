@@ -18,13 +18,5 @@ class DeviceRentalMainViewController: UIViewController {
     
     private func configuration() {
         title = "Аренда устройств"
-        deviceRentalMainView.delegate = self
-    }
-}
-// MARK: - DeviceRentalMainViewDelegateProtocol
-
-extension DeviceRentalMainViewController: DeviceRentalMainViewDelegateProtocol {
-    func segmentDidChanged() {
-        print("yo!")
     }
 }

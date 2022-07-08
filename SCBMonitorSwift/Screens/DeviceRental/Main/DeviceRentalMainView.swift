@@ -1,14 +1,10 @@
 import UIKit
 
-protocol DeviceRentalMainViewDelegateProtocol: AnyObject {
-    func segmentDidChanged()
-}
-
 class DeviceRentalMainView: UIView {
     // MARK: - Data
     
     var devices = [
-        Device(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 1", subtitle: "free", isBusy: true),
+        Device(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 1", subtitle: "free", isBusy: false),
         Device(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 2", subtitle: "free", isBusy: false),
         Device(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 3", subtitle: "free", isBusy: false),
         Device(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 4", subtitle: "free", isBusy: false),
@@ -36,19 +32,11 @@ class DeviceRentalMainView: UIView {
         Device(id: 0, operatingSystem: .android, image: UIImage(named: "image1"), title: "Samsung 14", subtitle: "Busy", isBusy: true)
     ]
     
-//    var iOSDevices = [
-//        Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone1", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone2", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone3", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone4", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone5", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone6", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone7", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone1", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone8", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone9", subtitle: "Free", isAmusing: false), Device(id: 1, operatingSystem: "iOS", image: UIImage(named: "image"), title: "iPhone10", subtitle: "Free", isAmusing: false)
-//    ]
-//    var androidDevices = [
-//        Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony1", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony2", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony3", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony4", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony5", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony6", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony7", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony8", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony9", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony10", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony11", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony12", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony13", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony13", subtitle: "Busy", isAmusing: true), Device(id: 1, operatingSystem: "Android", image: UIImage(named: "image1"), title: "Sony14", subtitle: "Busy", isAmusing: true)
-//    ]
-    
-    // MARK: - Properties
-    
-    weak var delegate: DeviceRentalMainViewDelegateProtocol?
+    var iOSDevices: [Device] = []
+    var androidDevices: [Device] = []
     // MARK: - UI
     
-    lazy var segmentedControlView: CustomSegmentedControl = {
+    private lazy var segmentedControlView: CustomSegmentedControl = {
         let segment = CustomSegmentedControl()
         segment.setButtonTitles(buttonTitles: ["IOS", "Android"])
         segment.selectorViewColor = UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1)
@@ -57,7 +45,7 @@ class DeviceRentalMainView: UIView {
         return segment
     }()
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
         view.dataSource = self
@@ -70,6 +58,8 @@ class DeviceRentalMainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
+        obtainIOSDevices()
+        obtainAndroidDevices()
     }
     
     required init?(coder: NSCoder) {
@@ -102,138 +92,89 @@ class DeviceRentalMainView: UIView {
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
-    // MARK: - OBJC functions
     
-    @objc private func segmentDidChanged(_ sender: UISegmentedControl) {
-        tableView.reloadData()
-        delegate?.segmentDidChanged()
+    private func obtainIOSDevices() {
+        for device in devices {
+            if device.operatingSystem == .iOS {
+                iOSDevices.append(device)
+            }
+        }
+    }
+    
+    private func obtainAndroidDevices() {
+        for device in devices {
+            if device.operatingSystem == .android {
+                androidDevices.append(device)
+            }
+        }
     }
 }
 // MARK: - UITableViewDataSource
 
 extension DeviceRentalMainView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var countOfAndroidDevices: Int = 0
-        var countOfIOSDevices: Int = 0
-        for device in devices {
-            if device.operatingSystem == .iOS {
-                countOfIOSDevices += 1
-            } else {
-                countOfAndroidDevices += 1
-            }
+        if segmentedControlView.selectedIndex == 0 {
+            return iOSDevices.count
+        } else {
+            return androidDevices.count
         }
-//        if segmentedControlView.selectedSegmentIndex == 0 {
-//            return countOfIOSDevices
-//        } else {
-//            return countOfAndroidDevices
-//        }
-        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DeviceRentalTableViewCell.reuseIdentifier, for: indexPath) as? DeviceRentalTableViewCell else {
             return UITableViewCell()
         }
-        let device = devices[indexPath.row]
-        if (device.operatingSystem == .iOS) && segmentedControlView.selectedIndex == 0
-            //&& (
-//            segmentedControlView.selectedSegmentIndex == 0)
-        {
-            cell.configureCell(by: device.image, title: device.title, subtitle: device.subtitle)
-            if device.isBusy {
-                let color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
-                cell.deviceStatusDidChanged(color)
-            } else {
-                let color = UIColor(red: 255.0 / 255, green: 255.0 / 255, blue: 255.0 / 255, alpha: 1)
-                cell.deviceStatusDidChanged(color)
-            }
-            return cell
+        var device: Device?
+        var color: UIColor?
+        if segmentedControlView.selectedIndex == 0 {
+            device = iOSDevices[indexPath.row]
         } else {
-            cell.configureCell(by: device.image, title: device.title, subtitle: device.subtitle)
-            if device.isBusy {
-                let color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
-                cell.deviceStatusDidChanged(color)
-            } else {
-                let color = UIColor(red: 255.0 / 255, green: 255.0 / 255, blue: 255.0 / 255, alpha: 1)
-                cell.deviceStatusDidChanged(color)
-            }
-            return cell
+            device = androidDevices[indexPath.row]
         }
-        
-        
-        
-//        if segmentedControlView.selectedSegmentIndex == 0 {
-//            let model = devices[indexPath.row]
-//            switch model.operatingSystem {
-//            case .iOS:
-//                cell.configureCell(by: model.image, title: model.title, subtitle: model.subtitle)
-//                if model.isAmusing {
-//                    let color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
-//                    cell.deviceStatusDidChanged(color)
-//                } else {
-//                    let color = UIColor(red: 225.0 / 255, green: 247.0 / 255, blue: 252.0 / 255, alpha: 1)
-//                    cell.deviceStatusDidChanged(color)
-//                }
-//                return cell
-//            case .android:
-//                break
-//            }
-//            cell.configureCell(by: model.image, title: model.title, subtitle: model.subtitle)
-//            if model.isAmusing {
-//                let color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
-//                cell.deviceStatusDidChanged(color)
-//            } else {
-//                let color = UIColor(red: 225.0 / 255, green: 247.0 / 255, blue: 252.0 / 255, alpha: 1)
-//                cell.deviceStatusDidChanged(color)
-//            }
-//
-//        } else {
-//            let model = devices[indexPath.row]
-//            switch model.operatingSystem {
-//            case .android:
-//                cell.configureCell(by: model.image, title: model.title, subtitle: model.subtitle)
-//                if model.isAmusing {
-//                    let color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
-//                    cell.deviceStatusDidChanged(color)
-//                } else {
-//                    let color = UIColor(red: 225.0 / 255, green: 247.0 / 255, blue: 252.0 / 255, alpha: 1)
-//                    cell.deviceStatusDidChanged(color)
-//                }
-//                return cell
-//            }
-//
-//        }
+        guard let device = device else {
+            return UITableViewCell()
+        }
+        cell.configureCell(by: device.image, title: device.title, subtitle: device.subtitle)
+        if device.isBusy {
+            color = UIColor(red: 239.0 / 255, green: 240.0 / 255, blue: 246.0 / 255, alpha: 1)
+        } else {
+            color = UIColor(red: 255.0 / 255, green: 255.0 / 255, blue: 255.0 / 255, alpha: 1)
+        }
+        guard let color = color else {
+            return UITableViewCell()
+        }
+
+        cell.deviceStatusDidChanged(color)
+        return cell
     }
     
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        if segmentedControlView.selectedSegmentIndex == 0 {
-//            let device = iOSDevices[indexPath.row]
-//            let image = device.isAmusing ? UIImage(named: "vector") : UIImage(named: "cross")
-//            let backgroundColor = device.isAmusing ? UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1) : UIColor(red: 166.0 / 255, green: 131.0 / 255, blue: 255.0 / 255, alpha: 1)
-//            let rentDeviceAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
-//                self.iOSDevices[indexPath.row].isAmusing.toggle()
-//                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-//            }
-//            rentDeviceAction.image = image
-//            rentDeviceAction.backgroundColor = backgroundColor
-//            let configuration = UISwipeActionsConfiguration(actions: [rentDeviceAction])
-//            configuration.performsFirstActionWithFullSwipe = false
-//            return configuration
-//        } else {
-//            let device = androidDevices[indexPath.row]
-//            let image = device.isAmusing ? UIImage(named: "vector") : UIImage(named: "cross")
-//            let backgroundColor = device.isAmusing ? UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1) : UIColor(red: 166.0 / 255, green: 131.0 / 255, blue: 255.0 / 255, alpha: 1)
-//            let rentDeviceAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
-//                self.androidDevices[indexPath.row].isAmusing.toggle()
-//                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-//            }
-//            rentDeviceAction.image = image
-//            rentDeviceAction.backgroundColor = backgroundColor
-//            let configuration = UISwipeActionsConfiguration(actions: [rentDeviceAction])
-//            configuration.performsFirstActionWithFullSwipe = false
-//            return configuration
-//        }
-//    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var device: Device?
+        var rentDeviceAction: UIContextualAction?
+        if segmentedControlView.selectedIndex == 0 {
+            device = iOSDevices[indexPath.row]
+            rentDeviceAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+                self.iOSDevices[indexPath.row].isBusy.toggle()
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        } else {
+            device = androidDevices[indexPath.row]
+            rentDeviceAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+                self.androidDevices[indexPath.row].isBusy.toggle()
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        guard let device = device, let rentDeviceAction = rentDeviceAction else {
+            return nil
+        }
+        let image = device.isBusy ? UIImage(named: "vector") : UIImage(named: "cross")
+        let backgroundColor = device.isBusy ? UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1) : UIColor(red: 166.0 / 255, green: 131.0 / 255, blue: 255.0 / 255, alpha: 1)
+        rentDeviceAction.image = image
+        rentDeviceAction.backgroundColor = backgroundColor
+        let configuration = UISwipeActionsConfiguration(actions: [rentDeviceAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -250,6 +191,8 @@ extension DeviceRentalMainView: UITableViewDelegate {
  
 extension DeviceRentalMainView: CustomSegmentedControlDelegate {
     func change(to index: Int) {
-        print("Pressing SegmentedControl \(index)")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
