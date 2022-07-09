@@ -12,7 +12,7 @@ enum OperatingSystem {
     case android
 }
 
-struct Device {
+struct DeviceRentalModel {
     let id: Int
     var operatingSystem: OperatingSystem
     var image: UIImage?

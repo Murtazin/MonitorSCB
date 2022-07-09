@@ -78,7 +78,6 @@ private extension DeviceRentalTableViewCell {
         NSLayoutConstraint.activate([
             deviceImageView.topAnchor.constraint(equalTo: containterView.topAnchor, constant: 12),
             deviceImageView.leftAnchor.constraint(equalTo: containterView.leftAnchor, constant: 28),
-//            deviceImageView.heightAnchor.constraint(equalToConstant: 60),
             containterView.bottomAnchor.constraint(equalTo: deviceImageView.bottomAnchor, constant: 12)
         ])
         
