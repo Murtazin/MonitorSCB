@@ -106,10 +106,14 @@ private extension DeviceRentalMainViewController {
             switch deviceOS {
             case .iOS:
                 self?.iOSDevices[indexPath.row].isBusy.toggle()
-                self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
             case .android:
                 self?.androidDevices[indexPath.row].isBusy.toggle()
-                self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
             }
         }
     }

@@ -12,36 +12,35 @@ protocol CustomSegmentedControlDelegate: AnyObject {
 }
 
 final class CustomSegmentedControl: UIView {
-    // MARK: - Properties
     
+    // MARK: - Properties
     private lazy var buttonTitles: [String] = []
     private lazy var buttons: [UIButton] = []
     private lazy var selectorView = UIView()
     private lazy var unSelectorView = UIView()
     
-    var textColor: UIColor = UIColor(red: 223.0 / 255, green: 223.0 / 255, blue: 223.0 / 255, alpha: 1)
-    var selectorViewColor: UIColor = UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1)
-    var selectorTextColor: UIColor = UIColor(red: 115.0 / 255, green: 223.0 / 255, blue: 237.0 / 255, alpha: 1)
-    var unSelectorViewColor: UIColor = UIColor(red: 223.0 / 255, green: 223.0 / 255, blue: 223.0 / 255, alpha: 1)
+    var textColor: UIColor = MColors.alto
+    var selectorViewColor: UIColor = MColors.spray
+    var selectorTextColor: UIColor = MColors.spray
+    var unSelectorViewColor: UIColor = MColors.alto
     
     weak var delegate: CustomSegmentedControlDelegate?
     
     public private(set) var selectedIndex = 0
+    
     // MARK: - Initializers
-
     convenience init(frame:CGRect, buttonTitle: [String]) {
         self.init(frame: frame)
         self.buttonTitles = buttonTitle
     }
-    // MARK: - Overrided
     
+    // MARK: - View life cycle
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
         updateView()
     }
-    // MARK: - Functions
     
+    // MARK: - Functions
     func setButtonTitles(buttonTitles: [String]) {
         self.buttonTitles = buttonTitles
         updateView()
@@ -52,14 +51,14 @@ final class CustomSegmentedControl: UIView {
         let button = buttons[index]
         selectedIndex = index
         button.setTitleColor(selectorTextColor, for: .normal)
-        let selectorPosition = frame.width/CGFloat(buttonTitles.count) * CGFloat(index)
+        let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(index)
         
         UIView.animate(withDuration: 0.2) {
             self.selectorView.frame.origin.x = selectorPosition
         }
     }
-    // MARK: - OBJC functions
     
+    // MARK: - OBJC functions
     @objc func buttonAction(sender: UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
@@ -81,17 +80,15 @@ final class CustomSegmentedControl: UIView {
 }
 
 //Configuration View
-extension CustomSegmentedControl {
-    // MARK: - Private functions
-    
-    private func updateView() {
+private extension CustomSegmentedControl {
+    func updateView() {
         createButton()
         configSelectorView()
         configUnSelectorView()
         configStackView()
     }
     
-    private func configStackView() {
+    func configStackView() {
         let stack = UIStackView(arrangedSubviews: buttons)
         stack.axis = .horizontal
         stack.alignment = .fill
@@ -108,7 +105,7 @@ extension CustomSegmentedControl {
         ])
     }
     
-    private func configSelectorView() {
+    func configSelectorView() {
         let selectorWidth = frame.width / CGFloat(self.buttonTitles.count)
         selectorView = UIView(frame: CGRect(x: 0,
                                             y: self.frame.height,
@@ -118,17 +115,17 @@ extension CustomSegmentedControl {
         addSubview(selectorView)
     }
     
-    private func configUnSelectorView() {
+    func configUnSelectorView() {
         let unSelectorWidth = frame.width / CGFloat(self.buttonTitles.count)
         unSelectorView = UIView(frame: CGRect(x: selectorView.frame.maxX,
-                                            y: self.frame.height,
-                                            width: unSelectorWidth,
-                                            height: 2))
+                                              y: self.frame.height,
+                                              width: unSelectorWidth,
+                                              height: 2))
         unSelectorView.backgroundColor = unSelectorViewColor
         addSubview(unSelectorView)
     }
     
-    private func createButton() {
+    func createButton() {
         buttons.removeAll()
         subviews.forEach({$0.removeFromSuperview()})
         for buttonTitle in buttonTitles {
