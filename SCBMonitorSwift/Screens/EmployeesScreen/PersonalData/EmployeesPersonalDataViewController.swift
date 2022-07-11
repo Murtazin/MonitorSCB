@@ -36,10 +36,16 @@ private extension EmployeesPersonalDataViewController {
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             headerView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 280)
+            headerView.heightAnchor.constraint(equalToConstant: 275)
         ])
         
         additionalInformationView.translatesAutoresizingMaskIntoConstraints = false
-        
+        view.addSubview(additionalInformationView)
+        NSLayoutConstraint.activate([
+            headerView.bottomAnchor.constraint(equalTo: additionalInformationView.topAnchor, constant: 16),
+            additionalInformationView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            additionalInformationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            additionalInformationView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
     }
 }

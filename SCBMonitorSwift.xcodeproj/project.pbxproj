@@ -26,6 +26,9 @@
 		A2690633287C082C006FB9F3 /* EmployeesPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690632287C082C006FB9F3 /* EmployeesPersonalDataViewController.swift */; };
 		A2690635287C09AD006FB9F3 /* EmployeesPersonalDataHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690634287C09AD006FB9F3 /* EmployeesPersonalDataHeaderView.swift */; };
 		A2690637287C1612006FB9F3 /* EmployeesPersonalDataAdditionalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690636287C1612006FB9F3 /* EmployeesPersonalDataAdditionalInformationView.swift */; };
+		A2690639287C1AC6006FB9F3 /* EmployeesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690638287C1AC6006FB9F3 /* EmployeesMainViewController.swift */; };
+		A269063B287C46F0006FB9F3 /* EmployeeInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063A287C46F0006FB9F3 /* EmployeeInformationModel.swift */; };
+		A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */; };
 		A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */; };
 		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		A2690632287C082C006FB9F3 /* EmployeesPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPersonalDataViewController.swift; sourceTree = "<group>"; };
 		A2690634287C09AD006FB9F3 /* EmployeesPersonalDataHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPersonalDataHeaderView.swift; sourceTree = "<group>"; };
 		A2690636287C1612006FB9F3 /* EmployeesPersonalDataAdditionalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPersonalDataAdditionalInformationView.swift; sourceTree = "<group>"; };
+		A2690638287C1AC6006FB9F3 /* EmployeesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesMainViewController.swift; sourceTree = "<group>"; };
+		A269063A287C46F0006FB9F3 /* EmployeeInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationModel.swift; sourceTree = "<group>"; };
+		A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
 		A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalTableViewCell.swift; sourceTree = "<group>"; };
 		A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalModel.swift; sourceTree = "<group>"; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 		A2690630287C07EC006FB9F3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A2690638287C1AC6006FB9F3 /* EmployeesMainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -225,6 +232,8 @@
 				A2690632287C082C006FB9F3 /* EmployeesPersonalDataViewController.swift */,
 				A2690634287C09AD006FB9F3 /* EmployeesPersonalDataHeaderView.swift */,
 				A2690636287C1612006FB9F3 /* EmployeesPersonalDataAdditionalInformationView.swift */,
+				A269063A287C46F0006FB9F3 /* EmployeeInformationModel.swift */,
+				A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */,
 			);
 			path = PersonalData;
 			sourceTree = "<group>";
@@ -374,6 +383,7 @@
 				A2690633287C082C006FB9F3 /* EmployeesPersonalDataViewController.swift in Sources */,
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
 				A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */,
+				A269063B287C46F0006FB9F3 /* EmployeeInformationModel.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
@@ -383,8 +393,10 @@
 				A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
+				A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				A2690635287C09AD006FB9F3 /* EmployeesPersonalDataHeaderView.swift in Sources */,
+				A2690639287C1AC6006FB9F3 /* EmployeesMainViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,

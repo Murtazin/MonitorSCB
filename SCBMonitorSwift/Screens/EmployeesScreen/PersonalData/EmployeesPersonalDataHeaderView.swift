@@ -50,7 +50,7 @@ private extension EmployeesPersonalDataHeaderView {
         employeeImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(employeeImageView)
         NSLayoutConstraint.activate([
-            employeeImageView.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            employeeImageView.topAnchor.constraint(equalTo: topAnchor, constant: 48),
             employeeImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             employeeImageView.heightAnchor.constraint(equalToConstant: 80),
             employeeImageView.widthAnchor.constraint(equalToConstant: 80)
