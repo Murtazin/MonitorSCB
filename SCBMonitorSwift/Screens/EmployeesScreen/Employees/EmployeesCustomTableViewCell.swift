@@ -17,24 +17,28 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
         containerView.layer.borderColor = MColors.selago
         containerView.layer.borderWidth = 2
         containerView.layer.cornerRadius = 10
+        containerView.sizeToFit()
         return containerView
     }()
     
     private lazy var employeeImageView: UIImageView = {
         let employeeImageView = UIImageView()
         employeeImageView.image = UIImage(named: "image")
+        employeeImageView.contentMode = .scaleToFill
         return employeeImageView
     }()
     
     private lazy var employeeFullNameLabel: UILabel = {
         let employeeFullNameLabel = UILabel()
-        employeeFullNameLabel.text = "Text"
+        employeeFullNameLabel.text = nil
+        employeeFullNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return employeeFullNameLabel
     }()
     
     private lazy var employeeProjectLabel: UILabel = {
         let employeeProjectLabel = UILabel()
-        employeeProjectLabel.text = "project"
+        employeeProjectLabel.text = nil
+        employeeProjectLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return employeeProjectLabel
     }()
     
@@ -48,6 +52,13 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public
+    func configure(by image: UIImage?, title: String, subtitle: String) {
+        employeeImageView.image = image
+        employeeFullNameLabel.text = title
+        employeeProjectLabel.text = subtitle
+    }
 }
 
 // MARK: - Private
@@ -57,6 +68,7 @@ private extension EmployeesCustomTableViewCell {
         containterView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(containterView)
         NSLayoutConstraint.activate([
+            containterView.heightAnchor.constraint(greaterThanOrEqualToConstant: 85),
             containterView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             containterView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
             contentView.bottomAnchor.constraint(equalTo: containterView.bottomAnchor, constant: 8),
@@ -66,23 +78,24 @@ private extension EmployeesCustomTableViewCell {
         employeeImageView.translatesAutoresizingMaskIntoConstraints = false
         containterView.addSubview(employeeImageView)
         NSLayoutConstraint.activate([
-            employeeImageView.topAnchor.constraint(equalTo: containterView.topAnchor, constant: 12),
-            employeeImageView.leftAnchor.constraint(equalTo: containterView.leftAnchor, constant: 28),
-            containterView.bottomAnchor.constraint(equalTo: employeeImageView.bottomAnchor, constant: 12)
+            employeeImageView.heightAnchor.constraint(equalToConstant: 60),
+            employeeImageView.widthAnchor.constraint(equalToConstant: 60),
+            employeeImageView.centerYAnchor.constraint(equalTo: containterView.centerYAnchor),
+            employeeImageView.leftAnchor.constraint(equalTo: containterView.leftAnchor, constant: 16)
         ])
 
         employeeFullNameLabel.translatesAutoresizingMaskIntoConstraints = false
         containterView.addSubview(employeeFullNameLabel)
         NSLayoutConstraint.activate([
             employeeFullNameLabel.topAnchor.constraint(equalTo: employeeImageView.topAnchor, constant: 4),
-            employeeFullNameLabel.leftAnchor.constraint(equalTo: employeeImageView.rightAnchor, constant: 28)
+            employeeFullNameLabel.leftAnchor.constraint(equalTo: employeeImageView.rightAnchor, constant: 16)
         ])
 
         employeeProjectLabel.translatesAutoresizingMaskIntoConstraints = false
         containterView.addSubview(employeeProjectLabel)
         NSLayoutConstraint.activate([
             employeeProjectLabel.topAnchor.constraint(equalTo: employeeFullNameLabel.bottomAnchor, constant: 12),
-            employeeProjectLabel.leftAnchor.constraint(equalTo: employeeImageView.rightAnchor, constant: 28)
+            employeeProjectLabel.leftAnchor.constraint(equalTo: employeeImageView.rightAnchor, constant: 16)
         ])
     }
 }

@@ -33,6 +33,9 @@
 		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
 		A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */; };
 		A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F2287D757100C68D89 /* UIView+Embed.swift */; };
+		A2E745F5287D825200C68D89 /* EmployeesHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F4287D825200C68D89 /* EmployeesHeaderViewModel.swift */; };
+		A2E745F7287D82DB00C68D89 /* EmployeeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F6287D82DB00C68D89 /* EmployeeCellViewModel.swift */; };
+		A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalModel.swift; sourceTree = "<group>"; };
 		A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		A2E745F2287D757100C68D89 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Embed.swift"; path = "SCBMonitorSwift/Screens/EmployeesScreen/UIView+Embed.swift"; sourceTree = SOURCE_ROOT; };
+		A2E745F4287D825200C68D89 /* EmployeesHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesHeaderViewModel.swift; sourceTree = "<group>"; };
+		A2E745F6287D82DB00C68D89 /* EmployeeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCellViewModel.swift; sourceTree = "<group>"; };
+		A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewHeaderView.swift; sourceTree = "<group>"; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +235,7 @@
 			children = (
 				A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */,
 				A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */,
+				A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */,
 			);
 			path = Employees;
 			sourceTree = "<group>";
@@ -248,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */,
+				A2E745F4287D825200C68D89 /* EmployeesHeaderViewModel.swift */,
+				A2E745F6287D82DB00C68D89 /* EmployeeCellViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */,
+				A2E745F5287D825200C68D89 /* EmployeesHeaderViewModel.swift in Sources */,
 				A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */,
 				A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */,
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
@@ -401,6 +411,7 @@
 				A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */,
+				A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
 				A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */,
@@ -408,6 +419,7 @@
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
 				A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
+				A2E745F7287D82DB00C68D89 /* EmployeeCellViewModel.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
 				A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,

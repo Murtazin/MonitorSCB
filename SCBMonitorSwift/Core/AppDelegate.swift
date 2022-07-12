@@ -20,16 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #warning("TODO: Use coordinator")
         let vc = EmployeesViewController()
-//        let navigationController = UINavigationController(rootViewController: vc)
-//        navigationController.navigationBar.prefersLargeTitles = true
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.navigationBar.prefersLargeTitles = true
         
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = navigationController
-        window?.rootViewController = vc
+        window?.rootViewController = navigationController
+//        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
         return true
