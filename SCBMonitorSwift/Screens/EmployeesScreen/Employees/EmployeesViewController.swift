@@ -15,19 +15,9 @@ final class EmployeesViewController: UIViewController {
         employeesTableView.separatorStyle = .none
         return employeesTableView
     }()
-
-    // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "Сотрудники"
-        view.backgroundColor = .systemBackground
-        
-        setUpUI()
-    }
     
-    // MARK: - Data
-    var data: [EmployeesHeaderViewModel] = [
+    // Mocked data -> we can use it in model
+    private var data: [EmployeesHeaderViewModel] = [
         EmployeesHeaderViewModel(titleText: "Проект менеджеры",
                                  cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
                                         ],
@@ -49,6 +39,16 @@ final class EmployeesViewController: UIViewController {
                                         ],
                                  isExpanded: false)
     ]
+
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Сотрудники"
+        view.backgroundColor = .systemBackground
+        
+        setUpUI()
+    }
 }
 
 // MARK: - Private
@@ -76,10 +76,7 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !data[section].isExpanded {
-            return 0
-        }
-        return data[section].cells.count
+        return !data[section].isExpanded ? 0 : data[section].cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,12 +95,9 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
         return header
     }
     
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
 }
 
 // MARK: - EmployeesTableViewHeaderViewDelegate
@@ -112,6 +106,8 @@ extension EmployeesViewController: EmployeesTableViewHeaderViewDelegate {
         let section = button.tag
         let isExpanded = data[section].isExpanded
         data[section].isExpanded = !isExpanded
-        employeesTableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        DispatchQueue.main.async {
+            self.employeesTableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        }
     }
 }

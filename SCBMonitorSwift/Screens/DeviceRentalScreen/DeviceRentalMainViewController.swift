@@ -75,6 +75,8 @@ final class DeviceRentalMainViewController: UIViewController {
 private extension DeviceRentalMainViewController {
     func setUpUI() {
         
+        let segmentedControlViewHeight: CGFloat = 50
+        
         segmentedControlView.delegate = self
         
         segmentedControlView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +85,7 @@ private extension DeviceRentalMainViewController {
             segmentedControlView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             segmentedControlView.leftAnchor.constraint(equalTo: view.leftAnchor),
             segmentedControlView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            segmentedControlView.heightAnchor.constraint(equalToConstant: 50),
+            segmentedControlView.heightAnchor.constraint(equalToConstant: segmentedControlViewHeight),
         ])
         
         tableView.delegate = self

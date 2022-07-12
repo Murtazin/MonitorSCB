@@ -17,7 +17,6 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
         containerView.layer.borderColor = MColors.selago
         containerView.layer.borderWidth = 2
         containerView.layer.cornerRadius = 10
-        containerView.sizeToFit()
         return containerView
     }()
     
@@ -65,10 +64,14 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
 private extension EmployeesCustomTableViewCell {
     func setUpContentView() {
         
+        let containerViewHeight: CGFloat = 85
+        let employeeImageViewHeight: CGFloat = 60
+        let employeeImageViewWidth: CGFloat = 60
+        
         containterView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(containterView)
         NSLayoutConstraint.activate([
-            containterView.heightAnchor.constraint(greaterThanOrEqualToConstant: 85),
+            containterView.heightAnchor.constraint(greaterThanOrEqualToConstant: containerViewHeight),
             containterView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             containterView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
             contentView.bottomAnchor.constraint(equalTo: containterView.bottomAnchor, constant: 8),
@@ -78,8 +81,8 @@ private extension EmployeesCustomTableViewCell {
         employeeImageView.translatesAutoresizingMaskIntoConstraints = false
         containterView.addSubview(employeeImageView)
         NSLayoutConstraint.activate([
-            employeeImageView.heightAnchor.constraint(equalToConstant: 60),
-            employeeImageView.widthAnchor.constraint(equalToConstant: 60),
+            employeeImageView.heightAnchor.constraint(equalToConstant: employeeImageViewHeight),
+            employeeImageView.widthAnchor.constraint(equalToConstant: employeeImageViewWidth),
             employeeImageView.centerYAnchor.constraint(equalTo: containterView.centerYAnchor),
             employeeImageView.leftAnchor.constraint(equalTo: containterView.leftAnchor, constant: 16)
         ])

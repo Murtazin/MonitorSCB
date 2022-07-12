@@ -44,14 +44,16 @@ final class PersonalAreaAdditionalInformationView: UIView {
 
 // MARK: - Private
 private extension PersonalAreaAdditionalInformationView {
+    
     func configureInformationViews() {
         birthdayInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "phone"),
-                                                                       title: "Phone number", description: "+7900909090"))
+                                                                           title: "Phone number", description: "+7900909090"))
         phoneNumberInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "cake"),
-                                                                          title: "Birtday date", description: "28.06.2000"))
+                                                                              title: "Birtday date", description: "28.06.2000"))
         skillsInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "suitcase"),
-                                                                     title: "Skills", description: "Figma, Sketch, Photoshop"))
+                                                                         title: "Skills", description: "Figma, Sketch, Photoshop"))
     }
+    
     func setUpUI() {
         
         let informationViewHeight: CGFloat = 60
