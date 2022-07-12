@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviceRentalTableViewCell: UITableViewCell {
+final class DeviceRentalTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "deviceRentalTableViewCell"
     
@@ -40,7 +40,7 @@ class DeviceRentalTableViewCell: UITableViewCell {
         return deviceStatusLabel
     }()
     
-    // MARK: - Life Cycle
+    // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpContentView()
@@ -50,11 +50,11 @@ class DeviceRentalTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Major functions
-    func configure(by image: UIImage?, title: String, subtitle: String) {
-        deviceImageView.image = image
-        deviceTitleLabel.text = title
-        deviceStatusLabel.text = subtitle
+    // MARK: - Public
+    func configure(by model: DeviceRentalModel) {
+        deviceImageView.image = model.image
+        deviceTitleLabel.text = model.title
+        deviceStatusLabel.text = model.subtitle
     }
     
     func deviceStatusDidChanged(isBusy: Bool) {
@@ -62,8 +62,10 @@ class DeviceRentalTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Private
 private extension DeviceRentalTableViewCell {
     func setUpContentView() {
+        
         containterView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(containterView)
         NSLayoutConstraint.activate([

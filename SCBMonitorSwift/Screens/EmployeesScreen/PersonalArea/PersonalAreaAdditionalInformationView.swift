@@ -1,5 +1,5 @@
 //
-//  EmployeesPersonalDataAdditionalInformationView.swift
+//  PersonalAreaAdditionalInformationView.swift
 //  SCBMonitorSwift
 //
 //  Created by Renat Murtazin on 11.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmployeesPersonalDataAdditionalInformationView: UIView {
+final class PersonalAreaAdditionalInformationView: UIView {
 
     // MARK: - Private properties
     private lazy var birthdayInformationView: EmployeeCustomInformationView = {
@@ -25,10 +25,16 @@ class EmployeesPersonalDataAdditionalInformationView: UIView {
         return skillsInformationView
     }()
     
-    // MARK: - View life cycle
+    // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpUserInterface()
+        
+        layer.cornerRadius = 20
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        backgroundColor = .systemBackground
+        
+        configureInformationViews()
+        setUpUI()
     }
     
     required init?(coder: NSCoder) {
@@ -36,40 +42,48 @@ class EmployeesPersonalDataAdditionalInformationView: UIView {
     }
 }
 
-private extension EmployeesPersonalDataAdditionalInformationView {
-    func setUpUserInterface() {
-        backgroundColor = .systemBackground
-        layer.cornerRadius = 20
-        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+// MARK: - Private
+private extension PersonalAreaAdditionalInformationView {
+    func configureInformationViews() {
+        birthdayInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "phone"),
+                                                                       title: "Phone number", description: "+7900909090"))
+        phoneNumberInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "cake"),
+                                                                          title: "Birtday date", description: "28.06.2000"))
+        skillsInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "suitcase"),
+                                                                     title: "Skills", description: "Figma, Sketch, Photoshop"))
+    }
+    func setUpUI() {
         
-        birthdayInformationView.configure(by: EmployeeInformationModel(image: UIImage(named: "phone"), title: "Phone number", description: "+7900909090"))
+        let informationViewHeight: CGFloat = 60
+        
         birthdayInformationView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(birthdayInformationView)
         NSLayoutConstraint.activate([
+            birthdayInformationView.heightAnchor.constraint(equalToConstant: informationViewHeight),
+            
             birthdayInformationView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             birthdayInformationView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             rightAnchor.constraint(equalTo: birthdayInformationView.rightAnchor, constant: 16),
-            birthdayInformationView.heightAnchor.constraint(equalToConstant: 60)
         ])
         
-        phoneNumberInformationView.configure(by: EmployeeInformationModel(image: UIImage(named: "cake"), title: "Birtday date", description: "28.06.2000"))
         phoneNumberInformationView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(phoneNumberInformationView)
         NSLayoutConstraint.activate([
+            phoneNumberInformationView.heightAnchor.constraint(equalToConstant: informationViewHeight),
+            
             phoneNumberInformationView.topAnchor.constraint(equalTo: birthdayInformationView.bottomAnchor, constant: 16),
             phoneNumberInformationView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             rightAnchor.constraint(equalTo: phoneNumberInformationView.rightAnchor, constant: 16),
-            phoneNumberInformationView.heightAnchor.constraint(equalToConstant: 60)
         ])
         
-        skillsInformationView.configure(by: EmployeeInformationModel(image: UIImage(named: "suitcase"), title: "Skills", description: "Figma, Sketch, Photoshop"))
         skillsInformationView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(skillsInformationView)
         NSLayoutConstraint.activate([
+            skillsInformationView.heightAnchor.constraint(equalToConstant: informationViewHeight),
+            
             skillsInformationView.topAnchor.constraint(equalTo: phoneNumberInformationView.bottomAnchor, constant: 16),
             skillsInformationView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             rightAnchor.constraint(equalTo: skillsInformationView.rightAnchor, constant: 16),
-            skillsInformationView.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 }

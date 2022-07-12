@@ -15,6 +15,8 @@ enum OperatingSystem {
 struct DeviceRentalModel {
     let id: Int
     var operatingSystem: OperatingSystem
+    
+    #warning("TODO: Why optional ?")
     var image: UIImage?
     var title: String
     var subtitle: String

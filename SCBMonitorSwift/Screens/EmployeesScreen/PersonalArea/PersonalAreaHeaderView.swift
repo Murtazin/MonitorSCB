@@ -1,5 +1,5 @@
 //
-//  EmployeesPersonalDataHeaderView.swift
+//  PersonalAreaHeaderView.swift
 //  SCBMonitorSwift
 //
 //  Created by Renat Murtazin on 11.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmployeesPersonalDataHeaderView: UIView {
+final class PersonalAreaHeaderView: UIView {
     
     // MARK: - Private properties
     private lazy var employeeImageView: UIImageView = {
@@ -32,10 +32,13 @@ class EmployeesPersonalDataHeaderView: UIView {
         return employeeJobTitleLabel
     }()
     
-    // MARK: - View life cycle
+    // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpUserInterface()
+
+        backgroundColor = UIColor(cgColor: MColors.selago)
+
+        setUpUI()
     }
     
     required init?(coder: NSCoder) {
@@ -43,31 +46,36 @@ class EmployeesPersonalDataHeaderView: UIView {
     }
 }
 
-private extension EmployeesPersonalDataHeaderView {
-    func setUpUserInterface() {
-        backgroundColor = UIColor(cgColor: MColors.selago)
+// MARK: - Private
+private extension PersonalAreaHeaderView {
+    
+    func setUpUI() {
+        
+        let employeeImageViewHeight: CGFloat = 80
+        let employeeImageViewWidth: CGFloat = 80
         
         employeeImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(employeeImageView)
         NSLayoutConstraint.activate([
-            employeeImageView.topAnchor.constraint(equalTo: topAnchor, constant: 48),
+            employeeImageView.heightAnchor.constraint(equalToConstant: employeeImageViewHeight),
+            employeeImageView.widthAnchor.constraint(equalToConstant: employeeImageViewWidth),
+            
             employeeImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            employeeImageView.heightAnchor.constraint(equalToConstant: 80),
-            employeeImageView.widthAnchor.constraint(equalToConstant: 80)
+            employeeImageView.topAnchor.constraint(equalTo: topAnchor, constant: 48),
         ])
         
         employeeFullNameLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(employeeFullNameLabel)
         NSLayoutConstraint.activate([
-            employeeFullNameLabel.topAnchor.constraint(equalTo: employeeImageView.bottomAnchor, constant: 20),
-            employeeFullNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            employeeFullNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            employeeFullNameLabel.topAnchor.constraint(equalTo: employeeImageView.bottomAnchor, constant: 20)
         ])
         
         employeeJobTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(employeeJobTitleLabel)
         NSLayoutConstraint.activate([
-            employeeJobTitleLabel.topAnchor.constraint(equalTo: employeeFullNameLabel.bottomAnchor, constant: 16),
-            employeeJobTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            employeeJobTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            employeeJobTitleLabel.topAnchor.constraint(equalTo: employeeFullNameLabel.bottomAnchor, constant: 16)
         ])
     }
 }

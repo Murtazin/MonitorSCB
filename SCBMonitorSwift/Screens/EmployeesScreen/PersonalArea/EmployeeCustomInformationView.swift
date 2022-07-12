@@ -7,19 +7,17 @@
 
 import UIKit
 
-class EmployeeCustomInformationView: UIView {
+final class EmployeeCustomInformationView: UIView {
     
     // MARK: - Private properties
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.image = UIImage(named: "phone")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
     private lazy var textView: UITextView = {
         let textView = UITextView()
-//        textView.text = "+79747686272"
         textView.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         textView.textColor = MColors.maco
         textView.textAlignment = .left
@@ -28,15 +26,17 @@ class EmployeeCustomInformationView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-//        titleLabel.text = "Phone number"
         titleLabel.textColor = MColors.osloGray
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return titleLabel
     }()
     
-    // MARK: - View life cycle
+    // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .systemBackground
+        
         setUpUserInterface()
     }
     
@@ -44,24 +44,31 @@ class EmployeeCustomInformationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(by model: EmployeeInformationModel) {
+    // MARK: - Public
+    func configure(by model: PersonalAreaInformationModel) {
         imageView.image = model.image
         titleLabel.text = model.title
         textView.text = model.description
     }
 }
 
+// MARK: - Private
 private extension EmployeeCustomInformationView {
     func setUpUserInterface() {
-        backgroundColor = .systemBackground
+        
+        enum ImageViewSize {
+            static let height: CGFloat = 30
+            static let width: CGFloat = 30
+        }
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageView)
         NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: ImageViewSize.height),
+            imageView.widthAnchor.constraint(equalToConstant: ImageViewSize.width),
+            
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            imageView.heightAnchor.constraint(equalToConstant: 30),
-            imageView.widthAnchor.constraint(equalToConstant: 30)
+            imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16)
         ])
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

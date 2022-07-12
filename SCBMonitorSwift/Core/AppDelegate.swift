@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = EmployeesPersonalDataViewController()
+        
+        #warning("TODO: Use coordinator")
+        let vc = EmployeesViewController()
 //        let navigationController = UINavigationController(rootViewController: vc)
 //        navigationController.navigationBar.prefersLargeTitles = true
         

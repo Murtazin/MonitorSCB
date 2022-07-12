@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviceRentalMainViewController: UIViewController {
+final class DeviceRentalMainViewController: UIViewController {
     
     // MARK: - Data
     var iOSDevices: [DeviceRentalModel] = []
@@ -29,7 +29,7 @@ class DeviceRentalMainViewController: UIViewController {
         return tableView
     }()
     
-    // Mocked data
+    // Mocked data -> we can use it in model 
     private var devices = [
         DeviceRentalModel(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 1", subtitle: "free", isBusy: false),
         DeviceRentalModel(id: 0, operatingSystem: .iOS, image: UIImage(named: "image"), title: "iPhone 2", subtitle: "free", isBusy: false),
@@ -59,20 +59,24 @@ class DeviceRentalMainViewController: UIViewController {
         DeviceRentalModel(id: 0, operatingSystem: .android, image: UIImage(named: "image1"), title: "Samsung 14", subtitle: "Busy", isBusy: true)
     ]
     
-    // MARK: - View life cycle
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
         title = "Аренда устройств"
-        setUpUserInterface()
+        
+        setUpUI()
         setupMockData()
     }
 }
 
+// MARK: - Private
 private extension DeviceRentalMainViewController {
-    func setUpUserInterface() {
-        view.backgroundColor = .systemBackground
+    func setUpUI() {
         
         segmentedControlView.delegate = self
+        
         segmentedControlView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControlView)
         NSLayoutConstraint.activate([
@@ -103,17 +107,12 @@ private extension DeviceRentalMainViewController {
     
     func obtainContextualActionBy(deviceOS: OperatingSystem, indexPath: IndexPath) -> UIContextualAction {
         return UIContextualAction(style: .normal, title: nil) { [weak self] (action, view, handler) in
-            switch deviceOS {
-            case .iOS:
-                self?.iOSDevices[indexPath.row].isBusy.toggle()
-                DispatchQueue.main.async {
-                    self?.tableView.reloadRows(at: [indexPath], with: .automatic)
-                }
-            case .android:
-                self?.androidDevices[indexPath.row].isBusy.toggle()
-                DispatchQueue.main.async {
-                    self?.tableView.reloadRows(at: [indexPath], with: .automatic)
-                }
+            
+            guard let self = self else { return }
+            deviceOS == .iOS ? self.iOSDevices[indexPath.row].isBusy.toggle() : self.androidDevices[indexPath.row].isBusy.toggle()
+
+            DispatchQueue.main.async {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
     }
@@ -139,7 +138,7 @@ extension DeviceRentalMainViewController: UITableViewDataSource, UITableViewDele
         cell.selectionStyle = .none
 
         let device = segmentedControlView.selectedIndex == 0 ? iOSDevices[indexPath.row] : androidDevices[indexPath.row]
-        cell.configure(by: device.image, title: device.title, subtitle: device.subtitle)
+        cell.configure(by: device)
         cell.deviceStatusDidChanged(isBusy: device.isBusy)
         return cell
     }
