@@ -17,19 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        #warning("TODO: Use coordinator")
-        let vc = EmployeesViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.navigationBar.prefersLargeTitles = true
-        
         let navController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-//        window?.rootViewController = vc
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true

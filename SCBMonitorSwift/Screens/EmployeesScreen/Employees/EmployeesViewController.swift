@@ -9,6 +9,8 @@ import UIKit
 
 final class EmployeesViewController: UIViewController {
     
+    weak var employeesScreenFlowCoordinatorHandler: EmployeesScreenFlowCoordinatorHandler?
+    
     // MARK: - Private properties
     private lazy var employeesTableView: UITableView = {
         let employeesTableView = UITableView()
@@ -83,7 +85,7 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesCustomTableViewCell.reuseIdentitfier, for: indexPath) as! EmployeesCustomTableViewCell
         let model = data[indexPath.section].cells[indexPath.row]
         cell.configure(by: model.image, title: model.title, subtitle: model.subtitle)
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
         return cell
     }
     
@@ -96,7 +98,8 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        employeesScreenFlowCoordinatorHandler?.goToPersonalAreaButtonTapped()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
