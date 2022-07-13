@@ -45,7 +45,7 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setUpContentView()
+        setupContentView()
     }
     
     required init?(coder: NSCoder) {
@@ -62,7 +62,7 @@ final class EmployeesCustomTableViewCell: UITableViewCell {
 
 // MARK: - Private
 private extension EmployeesCustomTableViewCell {
-    func setUpContentView() {
+    func setupContentView() {
         
         let containerViewHeight: CGFloat = 85
         let employeeImageViewHeight: CGFloat = 60

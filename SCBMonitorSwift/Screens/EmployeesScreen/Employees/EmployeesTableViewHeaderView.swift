@@ -43,7 +43,7 @@ final class EmployeesTableViewHeaderView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
-        setUpUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -63,7 +63,7 @@ final class EmployeesTableViewHeaderView: UITableViewHeaderFooterView {
 
 // MARK: - Private
 private extension EmployeesTableViewHeaderView {
-    func setUpUI() {
+    func setupUI() {
         
         specialityLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(specialityLabel)

@@ -66,14 +66,14 @@ final class DeviceRentalMainViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Аренда устройств"
         
-        setUpUI()
+        setupUI()
         setupMockData()
     }
 }
 
 // MARK: - Private
 private extension DeviceRentalMainViewController {
-    func setUpUI() {
+    func setupUI() {
         
         let segmentedControlViewHeight: CGFloat = 50
         

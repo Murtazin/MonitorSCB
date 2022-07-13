@@ -37,7 +37,7 @@ final class EmployeeCustomInformationView: UIView {
         
         backgroundColor = .systemBackground
         
-        setUpUserInterface()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +54,7 @@ final class EmployeeCustomInformationView: UIView {
 
 // MARK: - Private
 private extension EmployeeCustomInformationView {
-    func setUpUserInterface() {
+    func setupUI() {
         
         enum ImageViewSize {
             static let height: CGFloat = 30

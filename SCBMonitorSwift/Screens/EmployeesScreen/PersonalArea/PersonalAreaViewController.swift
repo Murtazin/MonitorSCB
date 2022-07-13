@@ -26,13 +26,18 @@ final class PersonalAreaViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
 
-        setUpUI()
+        setupUI()
+    }
+    
+    // MARK: - Public
+    func configureHeaderView(by model: EmployeeCellViewModel) {
+        headerView.configure(by: model)
     }
 }
 
 // MARK: - Private
 private extension PersonalAreaViewController {
-    func setUpUI() {
+    func setupUI() {
         
         let headerViewHeight: CGFloat = 275
                 

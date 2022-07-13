@@ -34,7 +34,8 @@ final class PersonalAreaAdditionalInformationView: UIView {
         backgroundColor = .systemBackground
         
         configureInformationViews()
-        setUpUI()
+        
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +55,7 @@ private extension PersonalAreaAdditionalInformationView {
                                                                          title: "Skills", description: "Figma, Sketch, Photoshop"))
     }
     
-    func setUpUI() {
+    func setupUI() {
         
         let informationViewHeight: CGFloat = 60
         

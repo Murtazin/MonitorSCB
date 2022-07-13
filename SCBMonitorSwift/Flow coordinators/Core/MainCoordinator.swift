@@ -43,9 +43,6 @@ final class MainCoordinator: Coordinator {
 //                                                                  flowListener: self)
 //            childDependencies.add(dependency: mainScreenCoordinator)
 //            mainScreenCoordinator.start()
-            let employeesScreenCoordinator = EmployeesScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
-            childDependencies.add(dependency: employeesScreenCoordinator)
-            employeesScreenCoordinator.start()
 //        case false:
 //            let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
 //                                                                  navigationController,
@@ -54,6 +51,15 @@ final class MainCoordinator: Coordinator {
 //            authScreenCoordinator.start()
 //        }
       
+        
+        let employeesScreenCoordinator = EmployeesScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+        childDependencies.add(dependency: employeesScreenCoordinator)
+        employeesScreenCoordinator.start()
+        
+        
+//        let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+//        childDependencies.add(dependency: authScreenCoordinator)
+//        authScreenCoordinator.start()
     }
 }
 

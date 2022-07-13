@@ -21,23 +21,23 @@ final class EmployeesViewController: UIViewController {
     // Mocked data -> we can use it in model
     private var data: [EmployeesHeaderViewModel] = [
         EmployeesHeaderViewModel(titleText: "Проект менеджеры",
-                                 cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
+                                 employeeModels: [(EmployeeCellViewModel(id: 0, image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
                                         ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Дизайнеры",
-                                 cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
+                                 employeeModels: [(EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Ульяна Рожкова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Дарья Сухумская", subtitle: "Женский банк"))
                                         ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Аналитики",
-                                 cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
+                                 employeeModels: [(EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Евангелина Сидникова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Тамара Василькова", subtitle: "Женский банк"))
                                         ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Тестировщики",
-                                 cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
+                                 employeeModels: [(EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Юлия Смыр", subtitle: "Халенок")), (EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Пицунда Дранда", subtitle: "Женский банк"))
                                         ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Frontend-разработчики",
-                                 cells: [(EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Валентин Иванов", subtitle: "Женский банк")), (EmployeeCellViewModel(image: UIImage(named: "userMock-icon"), title: "Олег Янковский", subtitle: "Финансовый помощник"))
+                                 employeeModels: [(EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Валентин Иванов", subtitle: "Женский банк")), (EmployeeCellViewModel(id: 5, image: UIImage(named: "userMock-icon"), title: "Олег Монгол", subtitle: "Финансовый помощник"))
                                         ],
                                  isExpanded: false)
     ]
@@ -49,13 +49,13 @@ final class EmployeesViewController: UIViewController {
         title = "Сотрудники"
         view.backgroundColor = .systemBackground
         
-        setUpUI()
+        setupUI()
     }
 }
 
 // MARK: - Private
 private extension EmployeesViewController {
-    func setUpUI() {
+    func setupUI() {
         
         employeesTableView.tableFooterView = UIView()
         
@@ -78,14 +78,13 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return !data[section].isExpanded ? 0 : data[section].cells.count
+        return !data[section].isExpanded ? 0 : data[section].employeeModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesCustomTableViewCell.reuseIdentitfier, for: indexPath) as! EmployeesCustomTableViewCell
-        let model = data[indexPath.section].cells[indexPath.row]
+        let model = data[indexPath.section].employeeModels[indexPath.row]
         cell.configure(by: model.image, title: model.title, subtitle: model.subtitle)
-//        cell.selectionStyle = .none
         return cell
     }
     
@@ -98,7 +97,8 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        employeesScreenFlowCoordinatorHandler?.goToPersonalAreaButtonTapped()
+        let cell = data[indexPath.section].employeeModels[indexPath.row]
+        employeesScreenFlowCoordinatorHandler?.goToPersonalAreaButtonTapped(with: EmployeeCellViewModel(id: cell.id, image: cell.image, title: cell.title, subtitle: cell.subtitle))
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

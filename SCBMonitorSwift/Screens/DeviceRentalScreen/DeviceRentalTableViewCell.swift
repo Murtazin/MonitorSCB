@@ -44,7 +44,7 @@ final class DeviceRentalTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setUpContentView()
+        setupContentView()
     }
     
     required init?(coder: NSCoder) {
@@ -65,7 +65,7 @@ final class DeviceRentalTableViewCell: UITableViewCell {
 
 // MARK: - Private
 private extension DeviceRentalTableViewCell {
-    func setUpContentView() {
+    func setupContentView() {
         
         containterView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(containterView)

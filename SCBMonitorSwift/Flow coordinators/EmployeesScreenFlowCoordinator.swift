@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EmployeesScreenFlowCoordinatorHandler: AnyObject {
-    func goToPersonalAreaButtonTapped()
+    func goToPersonalAreaButtonTapped(with model: EmployeeCellViewModel)
 }
 
 final class EmployeesScreenFlowCoordinator: Coordinator {
@@ -47,9 +47,9 @@ extension EmployeesScreenFlowCoordinator: CoordinatorFlowListener {
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension EmployeesScreenFlowCoordinator: EmployeesScreenFlowCoordinatorHandler {
-    
-    func goToPersonalAreaButtonTapped() {
+    func goToPersonalAreaButtonTapped(with model: EmployeeCellViewModel) {
         let personalAreaViewController = PersonalAreaViewController()
+        personalAreaViewController.configureHeaderView(by: model)
         navigationController?.pushViewController(personalAreaViewController, animated: true)
     }
 }

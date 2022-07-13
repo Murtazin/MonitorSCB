@@ -38,18 +38,24 @@ final class PersonalAreaHeaderView: UIView {
 
         backgroundColor = UIColor(cgColor: MColors.selago)
 
-        setUpUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public
+    func configure(by model: EmployeeCellViewModel) {
+        employeeImageView.image = model.image
+        employeeFullNameLabel.text = model.title
     }
 }
 
 // MARK: - Private
 private extension PersonalAreaHeaderView {
     
-    func setUpUI() {
+    func setupUI() {
         
         let employeeImageViewHeight: CGFloat = 80
         let employeeImageViewWidth: CGFloat = 80

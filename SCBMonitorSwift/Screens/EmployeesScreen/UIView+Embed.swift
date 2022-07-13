@@ -23,6 +23,7 @@ extension UIView {
         }
 
         static let zero: EmbedInsets = EmbedInsets(top: 0, bottom: 0, left: 0, right: 0)
+        
         static func all(_ distance: CGFloat) -> EmbedInsets { EmbedInsets(top: distance, bottom: distance, left: distance, right: distance) }
     }
 
@@ -30,6 +31,9 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(self)
 
+        #warning("TODO: Сомнительно -> Реализуй сам")
+        
+        
         if let top = insets.top {
             self.topAnchor.constraint(equalTo: layoutGuide?.topAnchor ?? container.topAnchor, constant: top).isActive = true
         }
