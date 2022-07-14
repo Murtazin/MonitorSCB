@@ -12,6 +12,9 @@ final class AuthModalViewController: UIViewController {
     weak var authScreenFlowCoordinatorHandler: AuthScreenFlowCoordinatorHandler?
     
     // MARK: - Private properties
+    private var currentContainerHeight: CGFloat = 175
+    private let dismissibleHeight: CGFloat = 80
+    
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = MColors.white
@@ -54,11 +57,27 @@ final class AuthModalViewController: UIViewController {
         view.backgroundColor = .clear
         
         setupUI()
+        setupPanGesture()
+        setupTapGesture()
     }
 }
 
 // MARK: - Private
 private extension AuthModalViewController {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapAction))
+        tapGesture.delaysTouchesBegan = false
+        tapGesture.delaysTouchesEnded = false
+        dimmedView.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupPanGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanAction))
+        panGesture.delaysTouchesBegan = false
+        panGesture.delaysTouchesEnded = false
+        containerView.addGestureRecognizer(panGesture)
+    }
+    
     func setupUI() {
         
         let maxDimmedAlpha: CGFloat = 0.3
@@ -115,6 +134,20 @@ private extension AuthModalViewController {
     
     // MARK: - Objc
     @objc func closeButtonPressed(sender: UIButton) {
+        authScreenFlowCoordinatorHandler?.dismissAuthModalViewController()
+    }
+    
+    @objc func handlePanAction(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: containerView)
+        let newHeight = currentContainerHeight - translation.y
+        if gesture.state == .ended {
+            if newHeight < dismissibleHeight {
+                authScreenFlowCoordinatorHandler?.dismissAuthModalViewController()
+            }
+        }
+    }
+    
+    @objc func handleTapAction(gesture: UITapGestureRecognizer) {
         authScreenFlowCoordinatorHandler?.dismissAuthModalViewController()
     }
 }
