@@ -7,14 +7,11 @@
 
 import UIKit
 
-class AuthModalViewController: UIViewController {
+final class AuthModalViewController: UIViewController {
     
     weak var authScreenFlowCoordinatorHandler: AuthScreenFlowCoordinatorHandler?
     
     // MARK: - Private properties
-    private let maxDimmedAlpha: CGFloat = 0.3
-    private let defaultHeight: CGFloat = 175
-    
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = MColors.white
@@ -25,7 +22,6 @@ class AuthModalViewController: UIViewController {
     private lazy var dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = MColors.mineShaft
-        view.alpha = maxDimmedAlpha
         return view
     }()
     
@@ -65,6 +61,13 @@ class AuthModalViewController: UIViewController {
 private extension AuthModalViewController {
     func setupUI() {
         
+        let maxDimmedAlpha: CGFloat = 0.3
+        
+        let closeButtonHeight: CGFloat = 40
+        let defaultHeight: CGFloat = 175
+        
+        dimmedView.alpha = maxDimmedAlpha
+        
         dimmedView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dimmedView)
         NSLayoutConstraint.activate([
@@ -90,7 +93,7 @@ private extension AuthModalViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(closeButton)
         NSLayoutConstraint.activate([
-            closeButton.heightAnchor.constraint(equalToConstant: 40),
+            closeButton.heightAnchor.constraint(equalToConstant: closeButtonHeight),
             closeButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
             containerView.rightAnchor.constraint(equalTo: closeButton.rightAnchor, constant: 16)
         ])

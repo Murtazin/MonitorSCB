@@ -22,7 +22,6 @@ final class AuthViewController: UIViewController {
     
     private lazy var welcomeLabel: UILabel = {
         let welcomeLabel = UILabel()
-        welcomeLabel.numberOfLines = 2
         welcomeLabel.text = "Добро пожаловать \n \t в SCB Monitor!"
         welcomeLabel.textColor = MColors.mineShaft
         welcomeLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -89,6 +88,8 @@ private extension AuthViewController {
             topImageView.leftAnchor.constraint(equalTo: view.leftAnchor),
             view.rightAnchor.constraint(equalTo: topImageView.rightAnchor)
         ])
+        
+        welcomeLabel.numberOfLines = 2
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(welcomeLabel)

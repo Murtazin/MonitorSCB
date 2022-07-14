@@ -12,39 +12,41 @@ extension UIView {
     struct EmbedInsets {
         let top: CGFloat?
         let left: CGFloat?
-        let right: CGFloat?
         let bottom: CGFloat?
-
-        init(top: CGFloat? = nil, bottom: CGFloat? = nil, left: CGFloat? = nil, right: CGFloat? = nil) {
+        let right: CGFloat?
+        
+        init(top: CGFloat? = nil, left: CGFloat? = nil, bottom: CGFloat? = nil, right: CGFloat? = nil) {
             self.top = top
-            self.bottom = bottom
             self.left = left
+            self.bottom = bottom
             self.right = right
         }
-
-        static let zero: EmbedInsets = EmbedInsets(top: 0, bottom: 0, left: 0, right: 0)
         
-        static func all(_ distance: CGFloat) -> EmbedInsets { EmbedInsets(top: distance, bottom: distance, left: distance, right: distance) }
+        static let zero: EmbedInsets = EmbedInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        static func all(_ distance: CGFloat) -> EmbedInsets { EmbedInsets(top: distance, left: distance, bottom: distance, right: distance) }
     }
 
     func embed(in container: UIView, using layoutGuide: UILayoutGuide? = nil, insets: EmbedInsets = .zero) {
         self.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(self)
-
-        #warning("TODO: Сомнительно -> Реализуй сам")
         
+        let topAnchor = layoutGuide?.topAnchor ?? container.topAnchor
+        let leftAnchor = layoutGuide?.leftAnchor ?? container.leftAnchor
+        let bottomAnchor = layoutGuide?.bottomAnchor ?? container.bottomAnchor
+        let rightAnchor = layoutGuide?.rightAnchor ?? container.rightAnchor
         
         if let top = insets.top {
-            self.topAnchor.constraint(equalTo: layoutGuide?.topAnchor ?? container.topAnchor, constant: top).isActive = true
+            self.topAnchor.constraint(equalTo: topAnchor, constant: top).isActive = true
+        }
+        if let left = insets.left {
+            self.leftAnchor.constraint(equalTo: leftAnchor, constant: left).isActive = true
         }
         if let bottom = insets.bottom {
-            self.bottomAnchor.constraint(equalTo: layoutGuide?.bottomAnchor ?? container.bottomAnchor, constant: -bottom).isActive = true
+            bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: bottom).isActive = true
         }
-        if let leading = insets.left {
-            self.leadingAnchor.constraint(equalTo: layoutGuide?.leadingAnchor ?? container.leadingAnchor, constant: leading).isActive = true
-        }
-        if let trailing = insets.right {
-            self.trailingAnchor.constraint(equalTo: layoutGuide?.trailingAnchor ?? container.trailingAnchor, constant: -trailing).isActive = true
+        if let right = insets.right {
+            rightAnchor.constraint(equalTo: self.rightAnchor, constant: right).isActive = true
         }
     }
 }
