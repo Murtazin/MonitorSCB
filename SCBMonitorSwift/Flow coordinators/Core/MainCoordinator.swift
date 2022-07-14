@@ -34,28 +34,22 @@ final class MainCoordinator: Coordinator {
     
     func start() {
         
-//        let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
-//                                                              navigationController,
-//                                                              flowListener: self)
-//        childDependencies.add(dependency: authScreenCoordinator)
-        
-//        let isUserLogged = self.userDefault.bool(forKey: "isUserLogged")
+        let isUserLogged = self.userDefault.bool(forKey: "isUserLogged")
 
-//        switch isUserLogged {
-//        case true:
-//            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
-//                                                                  navigationController,
-//                                                                  flowListener: self)
-//            childDependencies.add(dependency: mainScreenCoordinator)
-//            mainScreenCoordinator.start()
-//        case false:
+        switch isUserLogged {
+        case true:
+            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
+                                                                  navigationController,
+                                                                  flowListener: self)
+            childDependencies.add(dependency: mainScreenCoordinator)
+            mainScreenCoordinator.start()
+        case false:
             let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
                                                                   navigationController,
                                                                   flowListener: self)
             childDependencies.add(dependency: authScreenCoordinator)
             authScreenCoordinator.start()
-//        }
-      
+        }
     }
 }
 

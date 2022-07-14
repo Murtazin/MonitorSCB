@@ -9,30 +9,30 @@ import UIKit
 
 final class NotifyScreenViewController: UIViewController {
     
-// MARK: - Private Properties
+    // MARK: - Private Properties
     weak var notifyScreenCoordinatorHandler: NotifyScreenFlowCoordinatorHandler?
     
     private let tableView = UITableView()
     
     let notifyDateFormatter = NotifyDateFormatter()
     
-//    private var notify = [NotifyModel(id: 1,
-//                              title: "День рождения Карины",
-//                              body: "Сегодня поздравляем Карину. Собираем деньги на подарок. Подарок подарок",
-//                                      isRead: false,
-//                                      date: Date("23.10.2000")),
-//                  NotifyModel(id: 2,
-//                              title: "День рождения Данила",
-//                              body: "Сегодня поздравляем Данила. Собираем деньги на подарок. Подарок подарок",
-//                              isRead: true,
-//                              date: "12/152022"),
-//                  NotifyModel(id: 3,
-//                              title: "День рождения Татьяны",
-//                              body: "Сегодня поздравляем Татьяну. Собираем деньги на подарок. Подарок подарок",
-//                              isRead: false,
-//                              date: "07/232020")]
+    private var notify = [NotifyModel(id: 1,
+                                      title: "День рождения Карины",
+                                      body: "Сегодня поздравляем Карину. Собираем деньги на подарок. Подарок подарок",
+                                      isRead: false,
+                                      date: "23.10.2000"),
+                          NotifyModel(id: 2,
+                                      title: "День рождения Данила",
+                                      body: "Сегодня поздравляем Данила. Собираем деньги на подарок. Подарок подарок",
+                                      isRead: true,
+                                      date: "12/152022"),
+                          NotifyModel(id: 3,
+                                      title: "День рождения Татьяны",
+                                      body: "Сегодня поздравляем Татьяну. Собираем деньги на подарок. Подарок подарок",
+                                      isRead: false,
+                                      date: "07/232020")]
     
-// MARK: - Lyfe Cycle
+    // MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +42,7 @@ final class NotifyScreenViewController: UIViewController {
         
         setupTableView()
         
-        print(notifyDateFormatter.convertDate(dateString: Date()))
+        //        print(notifyDateFormatter.convertDate(dateString: Date()))
     }
 }
 
@@ -81,10 +81,10 @@ extension NotifyScreenViewController: UITableViewDataSource, UITableViewDelegate
         cell.selectionStyle = .none
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        #warning("TODO: Review ")
+#warning("TODO: Review ")
         notifyScreenCoordinatorHandler?.openNotifItem(notify[indexPath.item]) // model -> model.id -> coordinator..
     }
 }

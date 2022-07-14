@@ -8,7 +8,10 @@
 import UIKit
 
 protocol MainScreenFlowCoordinatorHandler: AnyObject {
-//    func goToPersonalCabinetButtonDidTap()
+    func openNotif()
+    func openGuide()
+    func openPersonalPage()
+    func didSuccessLogin()
 }
 
 final class MainScreenFlowCoordinator: Coordinator {
@@ -40,17 +43,42 @@ extension MainScreenFlowCoordinator: CoordinatorFlowListener {
     func onFlowFinished(coordinator: Coordinator) {
         childDependencies.remove(dependency: coordinator)
         
-        flowListener?.onFlowFinished(coordinator: coordinator)
+//        flowListener?.onFlowFinished(coordinator: coordinator)
     }
 }
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
  
-// Example
-//    func goToPersonalCabinetButtonDidTap() {
-//        let personalViewConroller = PersonalCabinetViewController()
-//        navigationController?.pushViewController(personalViewConroller, animated: true)
-//    }
+    func openPersonalPage() {
+        let personalPageVC = PersonalPageViewController()
+        navigationController?.pushViewController(personalPageVC, animated: true)
+    }
+    
+    func openGuide() {
+        onFlowFinished(coordinator: self)
+        let guideVC = GuideScreenViewController()
+        navigationController?.pushViewController(guideVC, animated: true)
+    }
+    
+    func openNotif() {
+        onFlowFinished(coordinator: self)
+        let notifyScreenCoordinator = NotifyScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: notifyScreenCoordinator)
+        notifyScreenCoordinator.start()
+    }
+    
+    func didSuccessLogin() {
+//        UserDefaults.standard.set(true, forKey: "isUserLogged")
+        
+        onFlowFinished(coordinator: self)
+        let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: authScreenCoordinator)
+        authScreenCoordinator.start()
+    }
  
 }

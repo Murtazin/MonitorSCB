@@ -9,10 +9,10 @@ import UIKit
 
 final class NotifyDetailViewController: UIViewController {
     
-// MARK: - Public Properties
-    let Identification = Int()
+    // MARK: - Public Properties
+    var identification = Int()
     
-// MARK: - Private Properties
+    // MARK: - Private Properties
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = Layout.TitleLabel.text
@@ -38,7 +38,7 @@ final class NotifyDetailViewController: UIViewController {
         label.textColor = Layout.TextLabel.textColor
         return label
     }()
-// MARK: - Lyfe Cycle
+    // MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +46,7 @@ final class NotifyDetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         //        fetchReqest()
-
+        
         setupView()
     }
 }

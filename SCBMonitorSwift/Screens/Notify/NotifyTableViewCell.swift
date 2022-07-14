@@ -9,7 +9,7 @@ import UIKit
 
 final class NotifyCell: UITableViewCell {
     
-// MARK: - Private Properties
+    // MARK: - Private Properties
     private let userDefault = UserDefaults.standard
     
     private var cellId = Int()
@@ -49,14 +49,11 @@ final class NotifyCell: UITableViewCell {
         return label
     }()
     
-// Date(UTC) -> String (dd.mm.YYYY) // \n
-#warning("TODO: Изучи как работает + 1 пример с UTC + 3 на формат типа 02 апреля 2022")
+    // MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        #warning("TODO: MERGE")
         setupConteiner()
-        setupCube()
         setupLabel()
     }
     
@@ -76,7 +73,7 @@ final class NotifyCell: UITableViewCell {
 
 // MARK: - Setup Cell
 private extension NotifyCell {
-
+    
     func setupConteiner() {
         contentView.addSubview(conteiner)
         conteiner.translatesAutoresizingMaskIntoConstraints = false
@@ -87,8 +84,7 @@ private extension NotifyCell {
             contentView.bottomAnchor.constraint(equalTo: conteiner.bottomAnchor, constant: 16),
             contentView.rightAnchor.constraint(equalTo: conteiner.rightAnchor, constant: 16)
         ])
-    }
-    func setupCube() {
+        
         conteiner.addSubview(cubeView)
         cubeView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -108,6 +104,7 @@ private extension NotifyCell {
             cubeView.rightAnchor.constraint(equalTo: dateLabel.rightAnchor, constant: 10)
         ])
     }
+    
     func setupLabel () {
         conteiner.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

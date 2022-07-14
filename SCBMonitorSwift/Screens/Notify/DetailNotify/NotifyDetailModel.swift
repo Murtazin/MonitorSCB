@@ -11,5 +11,6 @@ struct DetailModel {
     let id: String
     let title: String
     let fullText: String
-    let date: Date
+//    let date: Date
+    let date: String
 }

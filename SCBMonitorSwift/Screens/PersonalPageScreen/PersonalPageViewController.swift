@@ -12,8 +12,8 @@ protocol PersonalPageViewControllerHandler: AnyObject {
 }
 
 final class PersonalPageViewController: UIViewController {
-
-// MARK: - Private Properties
+    
+    // MARK: - Private Properties
     private let tableView = UITableView()
     
     private var bottomView: UIView = {
@@ -53,7 +53,7 @@ final class PersonalPageViewController: UIViewController {
                                 PDModel(id: 3, type: Types.three, body: "mariyaivanova@sovcombank.ru"),
                                 PDModel(id: 4, type: Types.four, body: "Mac mini  K390092338,  Монитор Lenovo  27 дюймов  K390096131 Клавиатура Apple, мышка Apple, iphone14"),
                                 PDModel(id: 5, type: Types.five, body: "Figma, Sketch, Photoshop, Illustrator")]
-// MARK: - Life cycle
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +63,7 @@ final class PersonalPageViewController: UIViewController {
         setupTopView()
         
     }
-// MARK: - Obj
+    // MARK: - Obj
     @objc func buttonDidTap() {
         print("Exit Button")
     }

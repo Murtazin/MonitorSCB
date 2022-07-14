@@ -41,7 +41,7 @@ final class NotifyScreenFlowCoordinator: Coordinator {
     
     func openDetail(_ model: NotifyModel) {
         let mainVC = NotifyDetailViewController()
-        mainVC.Identification = model.id
+        mainVC.identification = model.id
         navigationController?.pushViewController(mainVC, animated: true)
     }
 }
@@ -65,7 +65,7 @@ extension NotifyScreenFlowCoordinator: NotifyScreenFlowCoordinatorHandler {
         
         
         let mainVC = NotifyDetailViewController()
-        mainVC.ident = model.id
+        mainVC.identification = model.id
         navigationController?.pushViewController(mainVC, animated: true)
         
     }

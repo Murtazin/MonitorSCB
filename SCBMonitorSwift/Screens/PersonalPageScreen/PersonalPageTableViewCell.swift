@@ -9,7 +9,7 @@ import UIKit
 
 final class PersonalDataCell: UITableViewCell {
     
-// MARK: - Private properties
+    // MARK: - Private properties
     private var cellId = Int()
     
     private var conteiner: UIView = {
@@ -35,7 +35,7 @@ final class PersonalDataCell: UITableViewCell {
         return btn
     }()
     
-// MARK: - Life cycle
+    // MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLabel()
@@ -65,7 +65,7 @@ final class PersonalDataCell: UITableViewCell {
             setupButton()
         }
     }
-// MARK: - Obj
+    // MARK: - Obj
     @objc func buttonDidTap() {
         // editButton func
     }

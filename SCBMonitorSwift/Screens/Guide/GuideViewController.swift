@@ -9,28 +9,24 @@ import UIKit
 
 final class GuideScreenViewController: UIViewController {
     
-//    weak var guideScreenCoordinatorHandler: GuideScreenFlowCoordinatorHandler?
-        
-    private let subTitle: UILabel = { // subtitle
+    // MARK: - Private Properties
+    private let subTitle: UILabel = {
         let label = UILabel()
         label.text = Layout.DescriptionLabel.text
         label.tintColor = .black
         label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
     }()
-    
-    let scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         return scrollView
     }()
-    
-    let contentStackView: UIStackView = {
+    private let contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
         return stackView
     }()
-    
     private let textLabel: UILabel = {
         let label = UILabel()
         label.text = Layout.TextLabel.text
@@ -40,6 +36,7 @@ final class GuideScreenViewController: UIViewController {
         return label
     }()
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,26 +44,22 @@ final class GuideScreenViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Для новичков"
         
-        setupDescriptionLabel()
-        setupScrollView()
-        setupStackView()
+        setupView()
     }
 }
 
-// MARK: - Private methods
+// MARK: - Setup View
 private extension GuideScreenViewController {
     
-    func setupDescriptionLabel() {
+    func setupView() {
         view.addSubview(subTitle)
         subTitle.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             subTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ])
         
-    }
-    
-    func setupScrollView() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
         
@@ -76,11 +69,10 @@ private extension GuideScreenViewController {
             view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             view.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: 16)
         ])
-    }
-    
-    func setupStackView() {
+        
         scrollView.addSubview(contentStackView)
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             contentStackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
             

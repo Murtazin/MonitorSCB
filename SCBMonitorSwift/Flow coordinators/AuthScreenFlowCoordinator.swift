@@ -9,9 +9,6 @@ import UIKit
 
 protocol AuthScreenFlowCoordinatorHandler: AnyObject {
     func didSuccessLogin()
-    func openNotif()
-    func openGuide()
-    func openPersonalPage()
 }
 
 final class AuthScreenFlowCoordinator: Coordinator {
@@ -34,9 +31,6 @@ final class AuthScreenFlowCoordinator: Coordinator {
         authVC.authScreenFlowCoordinatorHandler = self
         navigationController?.pushViewController(authVC, animated: false)
     }
-//    func openGuide(){
-//
-//    }
 }
 
 // MARK: - CoordinatorFlowListener
@@ -52,28 +46,8 @@ extension AuthScreenFlowCoordinator: CoordinatorFlowListener {
 // MARK: - AuthScreenFlowCoordinatorHandler
 extension AuthScreenFlowCoordinator: AuthScreenFlowCoordinatorHandler {
     
-    func openPersonalPage() {
-        let personalPageVC = PersonalPageViewController()
-        navigationController?.pushViewController(personalPageVC, animated: true)
-    }
-    
-    func openGuide() {
-        onFlowFinished(coordinator: self)
-        let guideVC = GuideScreenViewController()
-        navigationController?.pushViewController(guideVC, animated: true)
-    }
-    
-    func openNotif() {
-        onFlowFinished(coordinator: self)
-        let notifyScreenCoordinator = NotifyScreenFlowCoordinator(navigationController:
-                                                              navigationController,
-                                                              flowListener: self)
-        childDependencies.add(dependency: notifyScreenCoordinator)
-        notifyScreenCoordinator.start()
-    }
-    
     func didSuccessLogin() {
-//        UserDefaults.standard.set(true, forKey: "isUserLogged")
+        UserDefaults.standard.set(true, forKey: "isUserLogged")
         
         onFlowFinished(coordinator: self)
         let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
