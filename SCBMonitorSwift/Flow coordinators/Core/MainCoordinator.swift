@@ -34,23 +34,32 @@ final class MainCoordinator: Coordinator {
     
     func start() {
                 
-        let isUserLogged = self.userDefault.bool(forKey: "isUserLogged")
+//        let isUserLogged = self.userDefault.bool(forKey: "isUserLogged")
         
-        switch isUserLogged {
-        case true:
-            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
-                                                                  navigationController,
-                                                                  flowListener: self)
-            childDependencies.add(dependency: mainScreenCoordinator)
-            mainScreenCoordinator.start()
-        case false:
-            let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
-                                                                  navigationController,
-                                                                  flowListener: self)
-            childDependencies.add(dependency: authScreenCoordinator)
-            authScreenCoordinator.start()
-        }
+//        switch isUserLogged {
+//        case true:
+//            let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
+//                                                                  navigationController,
+//                                                                  flowListener: self)
+//            childDependencies.add(dependency: mainScreenCoordinator)
+//            mainScreenCoordinator.start()
+//        case false:
+//            let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
+//                                                                  navigationController,
+//                                                                  flowListener: self)
+//            childDependencies.add(dependency: authScreenCoordinator)
+//            authScreenCoordinator.start()
+//        }
       
+        
+        let employeesScreenCoordinator = EmployeesScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+        childDependencies.add(dependency: employeesScreenCoordinator)
+        employeesScreenCoordinator.start()
+        
+        
+//        let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController: navigationController, flowListener: self)
+//        childDependencies.add(dependency: authScreenCoordinator)
+//        authScreenCoordinator.start()
     }
 }
 
@@ -62,9 +71,11 @@ extension MainCoordinator: CoordinatorFlowListener {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
               let window = appDelegate.window else { return }
         
-        let mainScreen = MainScreenViewController()
-    
-        window.rootViewController = mainScreen
+//        let mainScreen = MainScreenViewController()
+//
+//        window.rootViewController = mainScreen
+        let employeesScreen = EmployeesViewController()
+        window.rootViewController = employeesScreen
         window.makeKeyAndVisible()
     }
 }

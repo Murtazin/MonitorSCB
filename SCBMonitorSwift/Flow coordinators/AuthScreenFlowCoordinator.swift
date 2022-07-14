@@ -9,6 +9,8 @@ import UIKit
 
 protocol AuthScreenFlowCoordinatorHandler: AnyObject {
     func didSuccessLogin()
+    func presentAuthModalViewController()
+    func dismissAuthModalViewController()
 }
 
 final class AuthScreenFlowCoordinator: Coordinator {
@@ -49,5 +51,16 @@ extension AuthScreenFlowCoordinator: AuthScreenFlowCoordinatorHandler {
         UserDefaults.standard.set(true, forKey: "isUserLogged")
         
         onFlowFinished(coordinator: self)
+    }
+    
+    func presentAuthModalViewController() {
+        let authModalViewController = AuthModalViewController()
+        authModalViewController.authScreenFlowCoordinatorHandler = self
+        authModalViewController.modalPresentationStyle = .overCurrentContext
+        navigationController?.present(authModalViewController, animated: true)
+    }
+    
+    func dismissAuthModalViewController() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }

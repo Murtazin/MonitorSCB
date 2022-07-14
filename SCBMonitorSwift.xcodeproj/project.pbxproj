@@ -21,6 +21,22 @@
 		455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3812874250300D18B57 /* MainScreenModel.swift */; };
 		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
 		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
+		A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */; };
+		A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */; };
+		A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249EC132878212F002D5047 /* CustomSegmentedControl.swift */; };
+		A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */; };
+		A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */; };
+		A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */; };
+		A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */; };
+		A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */; };
+		A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */; };
+		A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */; };
+		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
+		A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */; };
+		A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */; };
+		A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F2287D757100C68D89 /* UIView+Embed.swift */; };
+		A2E745F5287D825200C68D89 /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F4287D825200C68D89 /* EmployeesViewModel.swift */; };
+		A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +57,22 @@
 		455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBMonitorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalMainViewController.swift; sourceTree = "<group>"; };
+		A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModalViewController.swift; sourceTree = "<group>"; };
+		A249EC132878212F002D5047 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
+		A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
+		A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaAdditionalInformationView.swift; sourceTree = "<group>"; };
+		A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
+		A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
+		A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalTableViewCell.swift; sourceTree = "<group>"; };
+		A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalModel.swift; sourceTree = "<group>"; };
+		A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenFlowCoordinator.swift; sourceTree = "<group>"; };
+		A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCustomTableViewCell.swift; sourceTree = "<group>"; };
+		A2E745F2287D757100C68D89 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Embed.swift"; path = "SCBMonitorSwift/Screens/EmployeesScreen/UIView+Embed.swift"; sourceTree = SOURCE_ROOT; };
+		A2E745F4287D825200C68D89 /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
+		A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewHeaderView.swift; sourceTree = "<group>"; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +121,8 @@
 				455DF38D28743FDF00D18B57 /* Extensions */,
 				455DF379287423F500D18B57 /* Flow coordinators */,
 				4529832328730A9E004466E8 /* Core */,
+				4529832C28730CF7004466E8 /* Controls */,
+				A249EC1528784375002D5047 /* Controllers */,
 				4529832228730A98004466E8 /* Screens */,
 				452983172872FFCA004466E8 /* Assets.xcassets */,
 				4529832A28730B81004466E8 /* MColors.swift */,
@@ -99,9 +133,10 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4529832C28730CF7004466E8 /* Controls */,
-				455DF37E287424EC00D18B57 /* MainScreen */,
 				4529832528730ACA004466E8 /* Auth */,
+				455DF37E287424EC00D18B57 /* MainScreen */,
+				A269062F287C07A6006FB9F3 /* EmployeesScreen */,
+				A21847A72875A95C00787D4C /* DeviceRentalScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -121,6 +156,7 @@
 			children = (
 				4529832628730B3B004466E8 /* AuthViewController.swift */,
 				4529832828730B42004466E8 /* AuthModel.swift */,
+				A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -139,6 +175,7 @@
 				455DF3852874293E00D18B57 /* Core */,
 				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
 				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
+				A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */,
 			);
 			path = "Flow coordinators";
 			sourceTree = "<group>";
@@ -164,8 +201,67 @@
 		455DF38D28743FDF00D18B57 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A2E745F2287D757100C68D89 /* UIView+Embed.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A21847A72875A95C00787D4C /* DeviceRentalScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */,
+				A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */,
+				A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */,
+			);
+			path = DeviceRentalScreen;
+			sourceTree = "<group>";
+		};
+		A249EC1528784375002D5047 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A249EC132878212F002D5047 /* CustomSegmentedControl.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A269062F287C07A6006FB9F3 /* EmployeesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A2E745F1287D652900C68D89 /* Model */,
+				A2690631287C07F9006FB9F3 /* PersonalArea */,
+				A2690630287C07EC006FB9F3 /* Employees */,
+			);
+			path = EmployeesScreen;
+			sourceTree = "<group>";
+		};
+		A2690630287C07EC006FB9F3 /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */,
+				A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */,
+				A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		A2690631287C07F9006FB9F3 /* PersonalArea */ = {
+			isa = PBXGroup;
+			children = (
+				A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */,
+				A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */,
+				A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */,
+				A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */,
+			);
+			path = PersonalArea;
+			sourceTree = "<group>";
+		};
+		A2E745F1287D652900C68D89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */,
+				A2E745F4287D825200C68D89 /* EmployeesViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E51FC1149C390DEFC4E82622 /* Frameworks */ = {
@@ -309,14 +405,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */,
+				A2E745F5287D825200C68D89 /* EmployeesViewModel.swift in Sources */,
+				A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */,
+				A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */,
+				A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */,
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
+				A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */,
+				A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
+				A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */,
+				A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
+				A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */,
+				A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
+				A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
+				A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
+				A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */,
+				A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */,
+				A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,
