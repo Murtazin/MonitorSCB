@@ -9,7 +9,7 @@ import UIKit
 
 final class GuideScreenViewController: UIViewController {
     
-    weak var guideScreenCoordinatorHandler: GuideScreenFlowCoordinatorHandler?
+//    weak var guideScreenCoordinatorHandler: GuideScreenFlowCoordinatorHandler?
         
     private let subTitle: UILabel = { // subtitle
         let label = UILabel()

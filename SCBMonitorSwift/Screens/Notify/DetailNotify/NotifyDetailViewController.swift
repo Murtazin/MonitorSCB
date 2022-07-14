@@ -9,7 +9,7 @@ import UIKit
 
 final class NotifyDetailViewController: UIViewController {
     
-    weak var notifyDetailCoordinatorHandler: NotifyDetailFlowCoordinatorHandler?
+//    weak var notifyDetailCoordinatorHandler: NotifyDetailFlowCoordinatorHandler?
     
     #warning("TODO: Full name variable")
     var ident = Int()

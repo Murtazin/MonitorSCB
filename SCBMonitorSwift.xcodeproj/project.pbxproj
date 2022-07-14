@@ -29,10 +29,6 @@
 		F850FF51287B1FC200D837A3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF50287B1FC200D837A3 /* GuideViewController.swift */; };
 		F850FF55287B2AB100D837A3 /* NotifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */; };
 		F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */; };
-		F8976AD0287DD85400300401 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976ACF287DD85400300401 /* PersonalPageViewController.swift */; };
-		F8A7A81B287E559A00531A31 /* PersonalPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */; };
-		F8A7A81D287E55AA00531A31 /* PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */; };
-		F8A7A81F287EA35500531A31 /* PersonalPageBtnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +66,6 @@
 		F850FF50287B1FC200D837A3 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailViewController.swift; sourceTree = "<group>"; };
 		F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailModel.swift; sourceTree = "<group>"; };
-		F8976ACF287DD85400300401 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
-		F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageModel.swift; sourceTree = "<group>"; };
-		F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
-		F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageBtnTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +126,6 @@
 			children = (
 				F850FF4F287B1FA600D837A3 /* Guide */,
 				F80BAA2E2879FEDC003B905D /* Notify */,
-				F8976ACE287DD83100300401 /* PersonalPage */,
 				4529832C28730CF7004466E8 /* Controls */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
 				4529832528730ACA004466E8 /* Auth */,
@@ -255,17 +246,6 @@
 				F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */,
 			);
 			path = DetailNotify;
-			sourceTree = "<group>";
-		};
-		F8976ACE287DD83100300401 /* PersonalPage */ = {
-			isa = PBXGroup;
-			children = (
-				F8976ACF287DD85400300401 /* PersonalPageViewController.swift */,
-				F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */,
-				F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */,
-				F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */,
-			);
-			path = PersonalPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,12 +385,8 @@
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				F81BB818287CC24E0023C0D6 /* DateFormatter.swift in Sources */,
-				F8A7A81F287EA35500531A31 /* PersonalPageBtnTableViewCell.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
-				F8A7A81B287E559A00531A31 /* PersonalPageModel.swift in Sources */,
-				F8A7A81D287E55AA00531A31 /* PersonalPageTableViewCell.swift in Sources */,
 				F80BAA302879FF39003B905D /* NotifyScreenViewController.swift in Sources */,
-				F8976AD0287DD85400300401 /* PersonalPageViewController.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
