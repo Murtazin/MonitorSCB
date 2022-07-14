@@ -22,4 +22,6 @@ struct MColors {
     static let whisper = UIColor(red: 0.937, green: 0.941, blue: 0.965, alpha: 1) // #EFF0F6
     static let mineShaft = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1) // #333333
     static let white = UIColor(red: 1, green: 1, blue: 1, alpha: 1) // #FFFFFF
+    
+    static let selago = UIColor(red: 0.922, green: 0.91, blue: 0.988, alpha: 1) // #EBE8FC
 }

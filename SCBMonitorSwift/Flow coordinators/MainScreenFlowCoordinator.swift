@@ -37,7 +37,6 @@ final class MainScreenFlowCoordinator: Coordinator {
 
 // MARK: - CoordinatorFlowListener
 extension MainScreenFlowCoordinator: CoordinatorFlowListener {
-    
     func onFlowFinished(coordinator: Coordinator) {
         childDependencies.remove(dependency: coordinator)
         

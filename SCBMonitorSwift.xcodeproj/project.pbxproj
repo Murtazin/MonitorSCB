@@ -21,6 +21,18 @@
 		455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3812874250300D18B57 /* MainScreenModel.swift */; };
 		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
 		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
+		F80BAA2228784570003B905D /* NotifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80BAA2128784570003B905D /* NotifyTableViewCell.swift */; };
+		F80BAA2D2879F94D003B905D /* NotifyScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80BAA2C2879F94D003B905D /* NotifyScreenFlowCoordinator.swift */; };
+		F80BAA302879FF39003B905D /* NotifyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80BAA2F2879FF39003B905D /* NotifyScreenViewController.swift */; };
+		F80BAA322879FF47003B905D /* NotifyScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80BAA312879FF47003B905D /* NotifyScreenModel.swift */; };
+		F81BB818287CC24E0023C0D6 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BB817287CC24E0023C0D6 /* DateFormatter.swift */; };
+		F850FF51287B1FC200D837A3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF50287B1FC200D837A3 /* GuideViewController.swift */; };
+		F850FF55287B2AB100D837A3 /* NotifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */; };
+		F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */; };
+		F8976AD0287DD85400300401 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976ACF287DD85400300401 /* PersonalPageViewController.swift */; };
+		F8A7A81B287E559A00531A31 /* PersonalPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */; };
+		F8A7A81D287E55AA00531A31 /* PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */; };
+		F8A7A81F287EA35500531A31 /* PersonalPageBtnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +54,26 @@
 		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBMonitorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
+		F80BAA2128784570003B905D /* NotifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyTableViewCell.swift; sourceTree = "<group>"; };
+		F80BAA242878618C003B905D /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		F80BAA252878618C003B905D /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		F80BAA262878618C003B905D /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		F80BAA272878618C003B905D /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		F80BAA282878618C003B905D /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F80BAA292878618C003B905D /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		F80BAA2A2878618C003B905D /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F80BAA2B2878618C003B905D /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		F80BAA2C2879F94D003B905D /* NotifyScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyScreenFlowCoordinator.swift; sourceTree = "<group>"; };
+		F80BAA2F2879FF39003B905D /* NotifyScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyScreenViewController.swift; sourceTree = "<group>"; };
+		F80BAA312879FF47003B905D /* NotifyScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyScreenModel.swift; sourceTree = "<group>"; };
+		F81BB817287CC24E0023C0D6 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		F850FF50287B1FC200D837A3 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailViewController.swift; sourceTree = "<group>"; };
+		F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailModel.swift; sourceTree = "<group>"; };
+		F8976ACF287DD85400300401 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
+		F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageModel.swift; sourceTree = "<group>"; };
+		F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
+		F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageBtnTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +118,7 @@
 		4529830D2872FFC7004466E8 /* SCBMonitorSwift */ = {
 			isa = PBXGroup;
 			children = (
+				F80BAA232878615C003B905D /* Fonts */,
 				455DF38D28743FDF00D18B57 /* Extensions */,
 				455DF379287423F500D18B57 /* Flow coordinators */,
 				4529832328730A9E004466E8 /* Core */,
@@ -99,6 +132,9 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F850FF4F287B1FA600D837A3 /* Guide */,
+				F80BAA2E2879FEDC003B905D /* Notify */,
+				F8976ACE287DD83100300401 /* PersonalPage */,
 				4529832C28730CF7004466E8 /* Controls */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
 				4529832528730ACA004466E8 /* Auth */,
@@ -139,6 +175,7 @@
 				455DF3852874293E00D18B57 /* Core */,
 				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
 				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
+				F80BAA2C2879F94D003B905D /* NotifyScreenFlowCoordinator.swift */,
 			);
 			path = "Flow coordinators";
 			sourceTree = "<group>";
@@ -174,6 +211,61 @@
 				5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F80BAA232878615C003B905D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F80BAA242878618C003B905D /* Ubuntu-Bold.ttf */,
+				F80BAA282878618C003B905D /* Ubuntu-BoldItalic.ttf */,
+				F80BAA2B2878618C003B905D /* Ubuntu-Italic.ttf */,
+				F80BAA262878618C003B905D /* Ubuntu-Light.ttf */,
+				F80BAA272878618C003B905D /* Ubuntu-LightItalic.ttf */,
+				F80BAA252878618C003B905D /* Ubuntu-Medium.ttf */,
+				F80BAA2A2878618C003B905D /* Ubuntu-MediumItalic.ttf */,
+				F80BAA292878618C003B905D /* Ubuntu-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F80BAA2E2879FEDC003B905D /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				F850FF58287C1B3C00D837A3 /* DetailNotify */,
+				F80BAA2F2879FF39003B905D /* NotifyScreenViewController.swift */,
+				F80BAA312879FF47003B905D /* NotifyScreenModel.swift */,
+				F80BAA2128784570003B905D /* NotifyTableViewCell.swift */,
+				F81BB817287CC24E0023C0D6 /* DateFormatter.swift */,
+			);
+			path = Notify;
+			sourceTree = "<group>";
+		};
+		F850FF4F287B1FA600D837A3 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				F850FF50287B1FC200D837A3 /* GuideViewController.swift */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		F850FF58287C1B3C00D837A3 /* DetailNotify */ = {
+			isa = PBXGroup;
+			children = (
+				F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */,
+				F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */,
+			);
+			path = DetailNotify;
+			sourceTree = "<group>";
+		};
+		F8976ACE287DD83100300401 /* PersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+				F8976ACF287DD85400300401 /* PersonalPageViewController.swift */,
+				F8A7A81A287E559A00531A31 /* PersonalPageModel.swift */,
+				F8A7A81C287E55AA00531A31 /* PersonalPageTableViewCell.swift */,
+				F8A7A81E287EA35500531A31 /* PersonalPageBtnTableViewCell.swift */,
+			);
+			path = PersonalPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,13 +404,25 @@
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
+				F81BB818287CC24E0023C0D6 /* DateFormatter.swift in Sources */,
+				F8A7A81F287EA35500531A31 /* PersonalPageBtnTableViewCell.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
+				F8A7A81B287E559A00531A31 /* PersonalPageModel.swift in Sources */,
+				F8A7A81D287E55AA00531A31 /* PersonalPageTableViewCell.swift in Sources */,
+				F80BAA302879FF39003B905D /* NotifyScreenViewController.swift in Sources */,
+				F8976AD0287DD85400300401 /* PersonalPageViewController.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
+				F80BAA322879FF47003B905D /* NotifyScreenModel.swift in Sources */,
+				F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */,
+				F80BAA2228784570003B905D /* NotifyTableViewCell.swift in Sources */,
+				F80BAA2D2879F94D003B905D /* NotifyScreenFlowCoordinator.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
+				F850FF51287B1FC200D837A3 /* GuideViewController.swift in Sources */,
+				F850FF55287B2AB100D837A3 /* NotifyDetailViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
