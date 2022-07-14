@@ -51,23 +51,14 @@ extension AuthScreenFlowCoordinator: CoordinatorFlowListener {
 
 // MARK: - AuthScreenFlowCoordinatorHandler
 extension AuthScreenFlowCoordinator: AuthScreenFlowCoordinatorHandler {
+    
     func openPersonalPage() {
-        onFlowFinished(coordinator: self)
+        let personalPageVC = PersonalPageViewController()
+        navigationController?.pushViewController(personalPageVC, animated: true)
     }
-    
-    
-//    func openPersonalPage() {
-//        let personalPageVC = PersonalPageViewController()
-//        navigationController?.pushViewController(personalPageVC, animated: true)
-//    }
     
     func openGuide() {
         onFlowFinished(coordinator: self)
-//        let GuideCoordinator = GuideScreenFlowCoordinator(navigationController:
-//                                                        navigationController,
-//                                                        flowListener: self)
-//        childDependencies.add(dependency: GuideCoordinator)
-//        GuideCoordinator.start()
         let guideVC = GuideScreenViewController()
         navigationController?.pushViewController(guideVC, animated: true)
     }

@@ -29,6 +29,9 @@
 		F850FF51287B1FC200D837A3 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF50287B1FC200D837A3 /* GuideViewController.swift */; };
 		F850FF55287B2AB100D837A3 /* NotifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */; };
 		F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */; };
+		F8A7A828287FB1F900531A31 /* PersonalPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */; };
+		F8A7A82A287FB1FF00531A31 /* PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */; };
+		F8A7A82C287FB20200531A31 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		F850FF50287B1FC200D837A3 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		F850FF54287B2AB100D837A3 /* NotifyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailViewController.swift; sourceTree = "<group>"; };
 		F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDetailModel.swift; sourceTree = "<group>"; };
+		F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageModel.swift; sourceTree = "<group>"; };
+		F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
+		F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F8A7A824287FB1E300531A31 /* PersonalPageScreen */,
 				F850FF4F287B1FA600D837A3 /* Guide */,
 				F80BAA2E2879FEDC003B905D /* Notify */,
 				4529832C28730CF7004466E8 /* Controls */,
@@ -246,6 +253,16 @@
 				F850FF5B287C1CFB00D837A3 /* NotifyDetailModel.swift */,
 			);
 			path = DetailNotify;
+			sourceTree = "<group>";
+		};
+		F8A7A824287FB1E300531A31 /* PersonalPageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */,
+				F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */,
+				F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */,
+			);
+			path = PersonalPageScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,9 +411,12 @@
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				F80BAA322879FF47003B905D /* NotifyScreenModel.swift in Sources */,
 				F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */,
+				F8A7A82A287FB1FF00531A31 /* PersonalPageTableViewCell.swift in Sources */,
 				F80BAA2228784570003B905D /* NotifyTableViewCell.swift in Sources */,
 				F80BAA2D2879F94D003B905D /* NotifyScreenFlowCoordinator.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
+				F8A7A828287FB1F900531A31 /* PersonalPageModel.swift in Sources */,
+				F8A7A82C287FB20200531A31 /* PersonalPageViewController.swift in Sources */,
 				F850FF51287B1FC200D837A3 /* GuideViewController.swift in Sources */,
 				F850FF55287B2AB100D837A3 /* NotifyDetailViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,

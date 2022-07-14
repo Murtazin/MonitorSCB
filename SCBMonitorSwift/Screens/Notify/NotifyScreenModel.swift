@@ -11,8 +11,8 @@ struct NotifyModel {
     let id: Int
     let title: String
     let body: String
-    let is_read: Bool
-    let date: String // DATE
+    let isRead: Bool
+    let date: Date
 }
 
 #warning("TODO: ??")

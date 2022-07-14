@@ -9,8 +9,7 @@ import UIKit
 
 final class NotifyCell: UITableViewCell {
     
-    #warning("TODO: MARKS!")
-    #warning("TODO: Need add spaces")
+// MARK: - Private Properties
     private let userDefault = UserDefaults.standard
     
     private var cellId = Int()
@@ -34,7 +33,6 @@ final class NotifyCell: UITableViewCell {
         label.numberOfLines = 1
         return label
     }()
-    
     private var bodyLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
@@ -72,18 +70,17 @@ final class NotifyCell: UITableViewCell {
         bodyLabel.text = model.body
         dateLabel.text = model.date
         
-        
-        conteiner.backgroundColor = model.is_read ? .white : MColors.selago
+        conteiner.backgroundColor = model.isRead ? .white : MColors.selago
     }
 }
 
-// MARK: - Private metods
+// MARK: - Setup Cell
 private extension NotifyCell {
-    
-    #warning("TODO: Spaces between funcs and NSLayoutConstraint ")
+
     func setupConteiner() {
         contentView.addSubview(conteiner)
         conteiner.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             conteiner.topAnchor.constraint(equalTo: contentView.topAnchor),
             conteiner.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
@@ -94,6 +91,7 @@ private extension NotifyCell {
     func setupCube() {
         conteiner.addSubview(cubeView)
         cubeView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             cubeView.heightAnchor.constraint(equalToConstant: 55),
             cubeView.widthAnchor.constraint(equalToConstant: 62),
@@ -102,6 +100,7 @@ private extension NotifyCell {
         ])
         cubeView.addSubview(dateLabel)
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: cubeView.topAnchor, constant: 11.5),
             dateLabel.leftAnchor.constraint(equalTo: cubeView.leftAnchor, constant: 10),
@@ -112,6 +111,7 @@ private extension NotifyCell {
     func setupLabel () {
         conteiner.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: conteiner.topAnchor, constant: 20),
             titleLabel.leftAnchor.constraint(equalTo: cubeView.rightAnchor, constant: 16),
@@ -120,6 +120,7 @@ private extension NotifyCell {
         ])
         conteiner.addSubview(bodyLabel)
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             bodyLabel.leftAnchor.constraint(equalTo: cubeView.rightAnchor, constant: 16),
             conteiner.bottomAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: 20),

@@ -9,36 +9,30 @@ import UIKit
 
 final class NotifyScreenViewController: UIViewController {
     
+// MARK: - Private Properties
     weak var notifyScreenCoordinatorHandler: NotifyScreenFlowCoordinatorHandler?
     
     private let tableView = UITableView()
     
-    #warning("TODO: Rename ")
-    let label: UILabel = {
-        let label = UILabel()
-        label.text = "Test"
-        return label
-    }()
+    let notifyDateFormatter = NotifyDateFormatter()
     
-    #warning("TODO: Rename ")
-    var notify = [NotifyModel(id: 1,
-                              title: "День рождения Карины",
-                              body: "Сегодня поздравляем Карину. Собираем деньги на подарок. Подарок подарок",
-                              is_read: false,
-                              date: "10/022020"),
-                  NotifyModel(id: 2,
-                              title: "День рождения Данила",
-                              body: "Сегодня поздравляем Данила. Собираем деньги на подарок. Подарок подарок",
-                              is_read: true,
-                              date: "12/152022"),
-                  NotifyModel(id: 3,
-                              title: "День рождения Татьяны",
-                              body: "Сегодня поздравляем Татьяну. Собираем деньги на подарок. Подарок подарок",
-                              is_read: false,
-                              date: "07/232020")]
+//    private var notify = [NotifyModel(id: 1,
+//                              title: "День рождения Карины",
+//                              body: "Сегодня поздравляем Карину. Собираем деньги на подарок. Подарок подарок",
+//                                      isRead: false,
+//                                      date: Date("23.10.2000")),
+//                  NotifyModel(id: 2,
+//                              title: "День рождения Данила",
+//                              body: "Сегодня поздравляем Данила. Собираем деньги на подарок. Подарок подарок",
+//                              isRead: true,
+//                              date: "12/152022"),
+//                  NotifyModel(id: 3,
+//                              title: "День рождения Татьяны",
+//                              body: "Сегодня поздравляем Татьяну. Собираем деньги на подарок. Подарок подарок",
+//                              isRead: false,
+//                              date: "07/232020")]
     
-    #warning("TODO: Mark: Life cycle ")
-
+// MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,8 +41,31 @@ final class NotifyScreenViewController: UIViewController {
         view.backgroundColor = .white
         
         setupTableView()
+        
+        print(notifyDateFormatter.convertDate(dateString: Date()))
     }
 }
+
+// MARK: - Setup UI
+private extension NotifyScreenViewController {
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        tableView.register(NotifyCell.self, forCellReuseIdentifier: notifyCellIdentifier)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor),
+            view.rightAnchor.constraint(equalTo: tableView.rightAnchor)
+        ])
+    }
+}
+
 // MARK: - TableView Metods
 extension NotifyScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -69,25 +86,5 @@ extension NotifyScreenViewController: UITableViewDataSource, UITableViewDelegate
         
         #warning("TODO: Review ")
         notifyScreenCoordinatorHandler?.openNotifItem(notify[indexPath.item]) // model -> model.id -> coordinator..
-    }
-}
-
-// Public property - > Private property -> Life cycle -> create ui -> delegate - > other extension (ordered marks) 
-// MARK: - Private Metods
-private extension NotifyScreenViewController {
-    func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
-        tableView.register(NotifyCell.self, forCellReuseIdentifier: notifyCellIdentifier)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor),
-            view.rightAnchor.constraint(equalTo: tableView.rightAnchor)
-        ])
     }
 }

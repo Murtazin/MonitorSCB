@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotifyDateFormatter: UIViewController {
+class NotifyDateFormatter: DateFormatter {
     
     func convertDateString(dateString: String,
                            fromFormat sourceFormat: String!,
@@ -48,11 +48,6 @@ class NotifyDateFormatter: UIViewController {
         print(localTimeZoneIdentifier)
         var timeZoneAbbreviations: [String] { return TimeZone.knownTimeZoneIdentifiers }
         print(timeZoneAbbreviations)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
     }
 }
 //let notifyDateFormatter = NotifyDateFormatter()

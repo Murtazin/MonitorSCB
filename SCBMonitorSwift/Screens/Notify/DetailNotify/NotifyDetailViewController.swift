@@ -9,11 +9,10 @@ import UIKit
 
 final class NotifyDetailViewController: UIViewController {
     
-//    weak var notifyDetailCoordinatorHandler: NotifyDetailFlowCoordinatorHandler?
+// MARK: - Public Properties
+    let Identification = Int()
     
-    #warning("TODO: Full name variable")
-    var ident = Int()
-    
+// MARK: - Private Properties
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = Layout.TitleLabel.text
@@ -21,19 +20,16 @@ final class NotifyDetailViewController: UIViewController {
         label.font = .systemFont(ofSize: 24, weight: .bold)
         return label
     }()
-    
-    let scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         return scrollView
     }()
-    
-    let contentStackView: UIStackView = {
+    private let contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
         return stackView
     }()
-    
     private let textLabel: UILabel = {
         let label = UILabel()
         label.text = Layout.TextLabel.text
@@ -42,7 +38,7 @@ final class NotifyDetailViewController: UIViewController {
         label.textColor = Layout.TextLabel.textColor
         return label
     }()
-    
+// MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,42 +46,35 @@ final class NotifyDetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         //        fetchReqest()
-        
-        
-        #warning("TODO: Merge")
-        setupTitleLabel()
-        setupScrollView()
-        setupStackView()
-        
-//        print(ident)
+
+        setupView()
     }
 }
-// MARK: - Private
+// MARK: - Setup UI
 private extension NotifyDetailViewController {
     
-    func setupTitleLabel() {
+    func setupView() {
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             titleLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ])
-    }
-    
-    func setupScrollView() {
+        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             view.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: 16)
         ])
-    }
-    
-    func setupStackView() {
+        
         scrollView.addSubview(contentStackView)
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             contentStackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
             contentStackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
@@ -109,8 +98,6 @@ private extension NotifyDetailViewController {
             static let numberOfLines = 0
             static let textColor = UIColor.black
         }
-        
-        
         struct TitleLabel {
             static let text = "День рождения Татьяны"
         }
