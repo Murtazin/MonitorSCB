@@ -22,6 +22,7 @@
 		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
 		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
 		A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */; };
+		A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */; };
 		A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249EC132878212F002D5047 /* CustomSegmentedControl.swift */; };
 		A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */; };
 		A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */; };
@@ -57,6 +58,7 @@
 		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBMonitorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalMainViewController.swift; sourceTree = "<group>"; };
+		A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModalViewController.swift; sourceTree = "<group>"; };
 		A249EC132878212F002D5047 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
 		A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				4529832628730B3B004466E8 /* AuthViewController.swift */,
 				4529832828730B42004466E8 /* AuthModel.swift */,
+				A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */,
 				A2E745F5287D825200C68D89 /* EmployeesViewModel.swift in Sources */,
+				A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */,
 				A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */,
 				A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */,
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,

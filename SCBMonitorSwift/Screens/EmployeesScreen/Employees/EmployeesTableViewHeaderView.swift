@@ -91,7 +91,7 @@ private extension EmployeesTableViewHeaderView {
         ])
     }
     
-    // MARK: - OBJC
+    // MARK: - Objc
     @objc func headerButtonDidTapped(sender: UIButton) {
         delegate?.expandedSection(button: sender)
     }

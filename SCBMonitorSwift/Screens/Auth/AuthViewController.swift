@@ -2,7 +2,7 @@
 //  AuthViewController.swift
 //  SCBMonitorSwift
 //
-//  Created by ANTON DOBRYNIN on 04.07.2022.
+//  Created by Renat Murtazin on 13.07.2022.
 //
 
 import UIKit
@@ -131,7 +131,7 @@ private extension AuthViewController {
         
         loginButton.layer.cornerRadius = 25
         
-        loginButton.addTarget(self, action: #selector(hidePasswordButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
@@ -144,7 +144,7 @@ private extension AuthViewController {
         hidePasswordButton.addTarget(self, action: #selector(hidePasswordButtonPressed), for: .touchUpInside)
     }
     
-    // MARK: - OBJC
+    // MARK: - Objc
     @objc func keyboardWillShow(sender: NSNotification) {
          self.view.frame.origin.y = -150
     }
@@ -158,5 +158,9 @@ private extension AuthViewController {
         let image = isHidePasswordButtonPressed ? UIImage(named: "hidePassword-icon") : UIImage(named: "showPassword-icon")
         hidePasswordButton.setImage(image, for: .normal)
         isHidePasswordButtonPressed.toggle()
+    }
+    
+    @objc func loginButtonPressed(sender: UIButton) {
+        authScreenFlowCoordinatorHandler?.presentAuthModalViewController()
     }
 }

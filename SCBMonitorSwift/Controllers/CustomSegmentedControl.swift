@@ -58,7 +58,7 @@ final class CustomSegmentedControl: UIView {
         }
     }
     
-    // MARK: - OBJC functions
+    // MARK: - Objc
     @objc func buttonAction(sender: UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
