@@ -57,13 +57,6 @@ extension NotifyScreenFlowCoordinator: CoordinatorFlowListener {
 extension NotifyScreenFlowCoordinator: NotifyScreenFlowCoordinatorHandler {
     func openNotifItem(_ model: NotifyModel) {
         onFlowFinished(coordinator: self)
-//        let notifyDetailCoordinator = NotifyDetailFlowCoordinator(navigationController:
-//                                                              navigationController,
-//                                                              flowListener: self)
-//        childDependencies.add(dependency: notifyDetailCoordinator)
-//        notifyDetailCoordinator.openDetail(model)
-        
-        
         let mainVC = NotifyDetailViewController()
         mainVC.identification = model.id
         navigationController?.pushViewController(mainVC, animated: true)

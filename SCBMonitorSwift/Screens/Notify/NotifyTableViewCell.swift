@@ -41,7 +41,6 @@ final class NotifyCell: UITableViewCell {
     }()
     private var dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "10/022020"
         label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = .white
         label.numberOfLines = 2
@@ -49,12 +48,13 @@ final class NotifyCell: UITableViewCell {
         return label
     }()
     
+    
     // MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupConteiner()
-        setupLabel()
+        setupConteiner() // Conteiner + cube
+        setupLabel() // 2 Labels
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -66,7 +66,7 @@ final class NotifyCell: UITableViewCell {
         titleLabel.text = model.title
         bodyLabel.text = model.body
         dateLabel.text = model.date
-        
+//            .asString()
         conteiner.backgroundColor = model.isRead ? .white : MColors.selago
     }
 }

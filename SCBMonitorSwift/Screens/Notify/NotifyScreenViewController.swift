@@ -14,23 +14,23 @@ final class NotifyScreenViewController: UIViewController {
     
     private let tableView = UITableView()
     
-    let notifyDateFormatter = NotifyDateFormatter()
-    
     private var notify = [NotifyModel(id: 1,
                                       title: "День рождения Карины",
                                       body: "Сегодня поздравляем Карину. Собираем деньги на подарок. Подарок подарок",
                                       isRead: false,
-                                      date: "23.10.2000"),
+                                      date: "23/102000"),
                           NotifyModel(id: 2,
                                       title: "День рождения Данила",
                                       body: "Сегодня поздравляем Данила. Собираем деньги на подарок. Подарок подарок",
                                       isRead: true,
-                                      date: "12/152022"),
+                                      date: "23/102000"),
                           NotifyModel(id: 3,
                                       title: "День рождения Татьяны",
                                       body: "Сегодня поздравляем Татьяну. Собираем деньги на подарок. Подарок подарок",
                                       isRead: false,
-                                      date: "07/232020")]
+                                      date: "23/102000")]
+    
+    
     
     // MARK: - Lyfe Cycle
     override func viewDidLoad() {
@@ -41,6 +41,17 @@ final class NotifyScreenViewController: UIViewController {
         view.backgroundColor = .white
         
         setupTableView()
+        
+        
+        let dateString: String = "23 Апрель 2000"
+        let dateFormatter = NotifyDateFormatter()
+        let date = dateFormatter.convertDatetoDate(dateString: dateString)
+        let now = Date()
+        print(date)
+        print(now.asString())  // prints -> 22/07/14 10:07
+        print(now.asString(format: "dd/MMyyyy"))  // prints -> 14/072022
+        print(now.asString(format: "MM/dd/yyyy", for: .gregorian)) //  prints -> 07/14/2022
+
         
         //        print(notifyDateFormatter.convertDate(dateString: Date()))
     }

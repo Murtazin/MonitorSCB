@@ -32,6 +32,7 @@ class NotifyDateFormatter: DateFormatter {
         }
         return convertedDate
     }
+    
     func convertDate(dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
@@ -39,6 +40,19 @@ class NotifyDateFormatter: DateFormatter {
         dateFormatter.dateFormat = "dd/MMyyyy"
         return dateFormatter.string(from: date!)
     }
+    func convertDatetoDate(dateString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        guard let date = dateFormatter.date(from: dateString) else { return Date() }
+        return date
+    }
+    
+    override func string(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy HH:mm" //yyyy
+        return formatter.string(from: date)
+    }
+    
     func showTimeZones() {
         var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
         print(secondsFromGMT)
@@ -49,6 +63,8 @@ class NotifyDateFormatter: DateFormatter {
         var timeZoneAbbreviations: [String] { return TimeZone.knownTimeZoneIdentifiers }
         print(timeZoneAbbreviations)
     }
+    
+    
 }
 //let notifyDateFormatter = NotifyDateFormatter()
 //
@@ -56,3 +72,13 @@ class NotifyDateFormatter: DateFormatter {
 ////        print(notifyDateFormatter.convertDate(dateString: "02 Августа 2022"))
 ////        print(notifyDateFormatter.convertDateCity(dateString: "02 Августа 2022 13:15", city: "Samara"))
 //print(notifyDateFormatter.convertDateCity(dateString: "02 Августа 2022 13:15", city: cities))
+extension Date{
+    func asString(format: String = "yy/MM/dd HH:mm",
+                  for identifier: Calendar.Identifier = .gregorian) -> String {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: identifier)
+        formatter.dateFormat = format
+        
+        return formatter.string(from: self)
+    }
+}
