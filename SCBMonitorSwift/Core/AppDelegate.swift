@@ -19,12 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let vc = TimerViewController()
-        let navController = UINavigationController()
+        let navController = UINavigationController(rootViewController: vc)
+        navController.navigationBar.prefersLargeTitles = true
         coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = vc
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true

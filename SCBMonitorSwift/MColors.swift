@@ -26,4 +26,6 @@ struct MColors {
     static let selago = CGColor(red: 235.0 / 255, green: 232.0 / 255, blue: 252.0 / 255, alpha: 1) // #EBE8FC
     static let maco = UIColor(red: 61.0 / 255, green: 64.0 / 255, blue: 67.0 / 255, alpha: 1) // #3D4043
     static let silver = UIColor(red: 196.0 / 255, green: 196.0 / 255, blue: 196.0 / 255, alpha: 1) // #C4C4C4
+    
+    static let transparentWhite = CGColor(red: 1, green: 1, blue: 1, alpha: 0)
 }
