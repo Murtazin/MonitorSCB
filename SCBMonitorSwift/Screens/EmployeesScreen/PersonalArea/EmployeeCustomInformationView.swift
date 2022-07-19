@@ -37,6 +37,8 @@ final class EmployeeCustomInformationView: UIView {
         
         backgroundColor = .systemBackground
         
+        textView.isUserInteractionEnabled = false
+        
         setupUI()
     }
     

@@ -35,7 +35,7 @@ final class PersonalAreaHeaderView: UIView {
     // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         backgroundColor = UIColor(cgColor: MColors.selago.cgColor)
 
         setupUI()

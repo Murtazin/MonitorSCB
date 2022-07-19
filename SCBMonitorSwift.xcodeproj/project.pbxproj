@@ -118,7 +118,6 @@
 		A276CCCD2886C34300F52DC0 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
 		A276CCCF2886C34300F52DC0 /* EmployeesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
 		A276CCD02886C34300F52DC0 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
-		A276CCD12886C34300F52DC0 /* UIView+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
 		A276CCD32886C34300F52DC0 /* EmployeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		A276CCD42886C34300F52DC0 /* EmployeesCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesCustomTableViewCell.swift; sourceTree = "<group>"; };
 		A276CCD52886C34300F52DC0 /* EmployeesTableViewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -369,7 +368,6 @@
 			children = (
 				A276CCC92886C34300F52DC0 /* PersonalArea */,
 				A276CCCE2886C34300F52DC0 /* Model */,
-				A276CCD12886C34300F52DC0 /* UIView+Embed.swift */,
 				A276CCD22886C34300F52DC0 /* Employees */,
 			);
 			path = EmployeesScreen;
