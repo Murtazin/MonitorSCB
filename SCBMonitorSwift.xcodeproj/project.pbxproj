@@ -22,7 +22,10 @@
 		455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */; };
 		455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */; };
 		A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */; };
+		A21E4DD32886956E00CE31FF /* TimerScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21E4DD22886956E00CE31FF /* TimerScreenFlowCoordinator.swift */; };
 		A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */; };
+		A248EED82880536D00E8F252 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248EED72880536D00E8F252 /* TimerViewController.swift */; };
+		A248EEDA2881656900E8F252 /* CALayer+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248EED92881656900E8F252 /* CALayer+Animation.swift */; };
 		A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249EC132878212F002D5047 /* CustomSegmentedControl.swift */; };
 		A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */; };
 		A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */; };
@@ -30,6 +33,7 @@
 		A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */; };
 		A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */; };
 		A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */; };
+		A26994832882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */; };
 		A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */; };
 		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
 		A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */; };
@@ -58,7 +62,10 @@
 		455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		5D9DE0B8CEF4E8147BACC34D /* Pods_SCBMonitorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBMonitorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21847AA2875A9BF00787D4C /* DeviceRentalMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalMainViewController.swift; sourceTree = "<group>"; };
+		A21E4DD22886956E00CE31FF /* TimerScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModalViewController.swift; sourceTree = "<group>"; };
+		A248EED72880536D00E8F252 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		A248EED92881656900E8F252 /* CALayer+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+Animation.swift"; path = "SCBMonitorSwift/Screens/TimerScreen/CALayer+Animation.swift"; sourceTree = SOURCE_ROOT; };
 		A249EC132878212F002D5047 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
 		A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
 		A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
+		A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimeInterval+ObtainFormattedString.swift"; path = "SCBMonitorSwift/Screens/TimerScreen/TimeInterval+ObtainFormattedString.swift"; sourceTree = SOURCE_ROOT; };
 		A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalTableViewCell.swift; sourceTree = "<group>"; };
 		A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalModel.swift; sourceTree = "<group>"; };
 		A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A248EED62880534F00E8F252 /* TimerScreen */,
 				4529832528730ACA004466E8 /* Auth */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
 				A269062F287C07A6006FB9F3 /* EmployeesScreen */,
@@ -176,6 +185,7 @@
 				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
 				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
 				A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */,
+				A21E4DD22886956E00CE31FF /* TimerScreenFlowCoordinator.swift */,
 			);
 			path = "Flow coordinators";
 			sourceTree = "<group>";
@@ -202,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				A2E745F2287D757100C68D89 /* UIView+Embed.swift */,
+				A248EED92881656900E8F252 /* CALayer+Animation.swift */,
+				A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +226,14 @@
 				A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */,
 			);
 			path = DeviceRentalScreen;
+			sourceTree = "<group>";
+		};
+		A248EED62880534F00E8F252 /* TimerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A248EED72880536D00E8F252 /* TimerViewController.swift */,
+			);
+			path = TimerScreen;
 			sourceTree = "<group>";
 		};
 		A249EC1528784375002D5047 /* Controllers */ = {
@@ -413,11 +433,13 @@
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
 				A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */,
 				A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */,
+				A248EEDA2881656900E8F252 /* CALayer+Animation.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
 				A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */,
 				A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
+				A21E4DD32886956E00CE31FF /* TimerScreenFlowCoordinator.swift in Sources */,
 				A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */,
 				A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
@@ -428,7 +450,9 @@
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */,
 				A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */,
+				A26994832882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift in Sources */,
 				A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */,
+				A248EED82880536D00E8F252 /* TimerViewController.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,
