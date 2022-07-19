@@ -7,6 +7,13 @@
 
 import UIKit
 
+
+enum Animation {
+    static var isStarted = false
+    static var isOnGoing = false
+    static var isFinished = false
+}
+
 struct LinePosition {
     
     let moveX: CGFloat
@@ -24,15 +31,10 @@ final class TimerViewController: UIViewController {
     
     private var linePositions: [LinePosition] = []
     
-    private var isAnimationStarted = false
-    private var isAnimationOnGoing = false
-    private var isAnimationFinished = false
-    
     private let internalShapeAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
     private let internalShape = CAShapeLayer()
     private let externalShape = CAShapeLayer()
-    private let internalCircleViewShape = CAShapeLayer()
     
     private let lineShape = CAShapeLayer()
     
@@ -86,6 +88,9 @@ final class TimerViewController: UIViewController {
 private extension TimerViewController {
     func setupUI() {
         
+        let startButtonHeight: CGFloat = 50
+        let startButtonWidth: CGFloat = 180
+        
         startButton.layer.cornerRadius = 25
         startButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
         startButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
@@ -94,8 +99,8 @@ private extension TimerViewController {
         startButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(startButton)
         NSLayoutConstraint.activate([
-            startButton.heightAnchor.constraint(equalToConstant: 50),
-            startButton.widthAnchor.constraint(equalToConstant: 180),
+            startButton.heightAnchor.constraint(equalToConstant: startButtonHeight),
+            startButton.widthAnchor.constraint(equalToConstant: startButtonWidth),
             startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 190),
             view.centerXAnchor.constraint(equalTo: startButton.centerXAnchor)
         ])
@@ -145,9 +150,9 @@ private extension TimerViewController {
     }
     
     func configureButton() {
-        let image = (isAnimationOnGoing) ? UIImage(named: "pause-icon") : UIImage(named: "play-icon")
-        let backgroundColor = (isAnimationOnGoing) ? MColors.spray : MColors.dodgerBlue
-        let title = (isAnimationOnGoing) ? "СТОП" : "СТАРТ"
+        let image = (Animation.isOnGoing) ? UIImage(named: "pause-icon") : UIImage(named: "play-icon")
+        let backgroundColor = (Animation.isOnGoing) ? MColors.spray : MColors.dodgerBlue
+        let title = (Animation.isOnGoing) ? "СТОП" : "СТАРТ"
         startButton.setImage(image, for: .normal)
         startButton.backgroundColor = backgroundColor
         startButton.setTitle(title, for: .normal)
@@ -159,10 +164,7 @@ private extension TimerViewController {
         internalShapeAnimation.duration = 10
         internalShapeAnimation.delegate = self
         
-        DispatchQueue.main.async {
-            self.internalShapeAnimation.beginTime = CACurrentMediaTime()
-            self.internalShape.add(self.internalShapeAnimation, forKey: self.keyForInternalCircleViewAnimation)
-        }
+        internalShape.add(internalShapeAnimation, forKey: keyForInternalCircleViewAnimation)
     }
     
     func setupLines() {
@@ -234,33 +236,32 @@ private extension TimerViewController {
     
     // MARK: - Objc
     @objc func startButtonPressed(sender: UIButton) {
-        if isAnimationStarted {
-            if isAnimationOnGoing {
+        
+        switch Animation.isStarted {
+        case true:
+            switch Animation.isOnGoing {
+            case true:
                 internalShape.pauseAnimation()
-            } else {
+            case false:
                 internalShape.resumeAnimation()
             }
-            isAnimationOnGoing.toggle()
-        } else {
+            Animation.isOnGoing.toggle()
+        case false:
             startInternalCircleViewAnimation()
-            isAnimationFinished.toggle()
-            isAnimationStarted.toggle()
-            isAnimationOnGoing.toggle()
+            Animation.isFinished.toggle()
+            Animation.isStarted.toggle()
+            Animation.isOnGoing.toggle()
         }
-        DispatchQueue.main.async {
-            self.configureButton()
-        }
+        configureButton()
     }
 }
 
 // MARK: - CAAnimationDelegate
 extension TimerViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        isAnimationFinished.toggle()
-        isAnimationOnGoing.toggle()
-        isAnimationStarted.toggle()
-        DispatchQueue.main.async {
-            self.configureButton()
-        }
+        Animation.isFinished.toggle()
+        Animation.isStarted.toggle()
+        Animation.isOnGoing.toggle()
+        configureButton()
     }
 }
