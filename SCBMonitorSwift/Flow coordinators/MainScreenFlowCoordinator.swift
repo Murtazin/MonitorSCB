@@ -8,6 +8,7 @@
 import UIKit
 
 protocol MainScreenFlowCoordinatorHandler: AnyObject {
+    func openCalendar()
     func openNotif()
     func openGuide()
     func openPersonalPage()
@@ -19,6 +20,8 @@ final class MainScreenFlowCoordinator: Coordinator {
     var childDependencies: CoordinatorDependencies
     weak var flowListener: CoordinatorFlowListener?
     weak var navigationController: UINavigationController?
+    
+    weak var mainVC: MainScreenViewController?
     
     init(navigationController: UINavigationController?,
          childDependencies: CoordinatorDependencies = DefaultCoordinatorDependencies(),
@@ -32,6 +35,7 @@ final class MainScreenFlowCoordinator: Coordinator {
     func start() {
         
         let mainVC = MainScreenViewController()
+        self.mainVC  = mainVC
         mainVC.mainScreenCoordinatorHandler = self
         navigationController?.pushViewController(mainVC, animated: false)
     }
@@ -49,10 +53,23 @@ extension MainScreenFlowCoordinator: CoordinatorFlowListener {
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
+    func openCalendar() {
+        onFlowFinished(coordinator: self)
+        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
+                                                          navigationController,
+                                                          flowListener: self)
+        childDependencies.add(dependency: calendarCoordinator)
+        calendarCoordinator.start()
+    }
+    
  
     func openPersonalPage() {
-        let personalPageVC = PersonalPageViewController()
-        navigationController?.pushViewController(personalPageVC, animated: true)
+        onFlowFinished(coordinator: self)
+        let personalPageCoordinator = PersonalPageFlowCoordinator(navigationController:
+                                                            navigationController,
+                                                            flowListener: self)
+        childDependencies.add(dependency: personalPageCoordinator)
+        personalPageCoordinator.start()
     }
     
     func openGuide() {

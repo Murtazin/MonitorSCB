@@ -7,12 +7,10 @@
 
 import UIKit
 
-protocol PersonalPageViewControllerHandler: AnyObject {
-    func openEditMenu()
-}
-
 final class PersonalPageViewController: UIViewController {
     
+    weak var personalPageCoordinatorHandler: PersonalPageCoordinatorHandler?
+
     // MARK: - Private Properties
     private let tableView = UITableView()
     
@@ -47,12 +45,13 @@ final class PersonalPageViewController: UIViewController {
         button.setTitle("Выйти", for: .normal)
         return button
     }()
-    
+        
     private var personalData = [PDModel(id: 1, type: Types.one, body: "28.06.2000"),
                                 PDModel(id: 2, type: Types.two, body: "+7 (900) 600-04-81"),
                                 PDModel(id: 3, type: Types.three, body: "mariyaivanova@sovcombank.ru"),
                                 PDModel(id: 4, type: Types.four, body: "Mac mini  K390092338,  Монитор Lenovo  27 дюймов  K390096131 Клавиатура Apple, мышка Apple, iphone14"),
                                 PDModel(id: 5, type: Types.five, body: "Figma, Sketch, Photoshop, Illustrator")]
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +67,6 @@ final class PersonalPageViewController: UIViewController {
         print("Exit Button")
     }
 }
-
 // MARK: - Setup UI
 private extension PersonalPageViewController {
     
@@ -117,6 +115,7 @@ private extension PersonalPageViewController {
         tableView.separatorStyle = .none
         tableView.register(PersonalDataCell.self, forCellReuseIdentifier: personalCellIdentifier)
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -155,7 +154,24 @@ extension PersonalPageViewController: UITableViewDataSource, UITableViewDelegate
                                                  for: indexPath) as! PersonalDataCell
         let personalData = personalData[indexPath.item]
         cell.configure(personalData)
+        cell.delegate = self
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+// MARK: - PersonalDataCellDelegate
+extension PersonalPageViewController: PersonalDataCellDelegate {
+    func openEditPopup() {
+        personalPageCoordinatorHandler?.openEditPopup()
+    }
+}
+
+// MARK: - PersonalPopUpDelegate
+extension PersonalPageViewController {
+    func saveData(_ data: String) {
+        personalData[4].body = data
+        let indexPath = IndexPath(item: 4, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }

@@ -16,6 +16,7 @@ final class AuthViewController: UIViewController {
         button.setTitle("Логин", for: .normal)
         return button
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

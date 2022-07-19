@@ -32,6 +32,8 @@
 		F8A7A828287FB1F900531A31 /* PersonalPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */; };
 		F8A7A82A287FB1FF00531A31 /* PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */; };
 		F8A7A82C287FB20200531A31 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */; };
+		F8A7A8522880111400531A31 /* PersonalPageFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A8512880111400531A31 /* PersonalPageFlowCoordinator.swift */; };
+		F8A7A8542880125C00531A31 /* PersonalPagePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7A8532880125C00531A31 /* PersonalPagePopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageModel.swift; sourceTree = "<group>"; };
 		F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
 		F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
+		F8A7A8512880111400531A31 /* PersonalPageFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageFlowCoordinator.swift; sourceTree = "<group>"; };
+		F8A7A8532880125C00531A31 /* PersonalPagePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPagePopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				F8A7A824287FB1E300531A31 /* PersonalPageScreen */,
-				F850FF4F287B1FA600D837A3 /* Guide */,
-				F80BAA2E2879FEDC003B905D /* Notify */,
+				F850FF4F287B1FA600D837A3 /* GuideScreen */,
+				F80BAA2E2879FEDC003B905D /* NotifyScreens */,
 				4529832C28730CF7004466E8 /* Controls */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
-				4529832528730ACA004466E8 /* Auth */,
+				4529832528730ACA004466E8 /* AuthScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -150,13 +154,13 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		4529832528730ACA004466E8 /* Auth */ = {
+		4529832528730ACA004466E8 /* AuthScreen */ = {
 			isa = PBXGroup;
 			children = (
 				4529832628730B3B004466E8 /* AuthViewController.swift */,
 				4529832828730B42004466E8 /* AuthModel.swift */,
 			);
-			path = Auth;
+			path = AuthScreen;
 			sourceTree = "<group>";
 		};
 		4529832C28730CF7004466E8 /* Controls */ = {
@@ -174,6 +178,7 @@
 				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
 				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
 				F80BAA2C2879F94D003B905D /* NotifyScreenFlowCoordinator.swift */,
+				F8A7A8512880111400531A31 /* PersonalPageFlowCoordinator.swift */,
 			);
 			path = "Flow coordinators";
 			sourceTree = "<group>";
@@ -226,7 +231,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		F80BAA2E2879FEDC003B905D /* Notify */ = {
+		F80BAA2E2879FEDC003B905D /* NotifyScreens */ = {
 			isa = PBXGroup;
 			children = (
 				F850FF58287C1B3C00D837A3 /* DetailNotify */,
@@ -235,15 +240,15 @@
 				F80BAA2128784570003B905D /* NotifyTableViewCell.swift */,
 				F81BB817287CC24E0023C0D6 /* DateFormatter.swift */,
 			);
-			path = Notify;
+			path = NotifyScreens;
 			sourceTree = "<group>";
 		};
-		F850FF4F287B1FA600D837A3 /* Guide */ = {
+		F850FF4F287B1FA600D837A3 /* GuideScreen */ = {
 			isa = PBXGroup;
 			children = (
 				F850FF50287B1FC200D837A3 /* GuideViewController.swift */,
 			);
-			path = Guide;
+			path = GuideScreen;
 			sourceTree = "<group>";
 		};
 		F850FF58287C1B3C00D837A3 /* DetailNotify */ = {
@@ -258,9 +263,10 @@
 		F8A7A824287FB1E300531A31 /* PersonalPageScreen */ = {
 			isa = PBXGroup;
 			children = (
-				F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */,
-				F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */,
 				F8A7A82B287FB20200531A31 /* PersonalPageViewController.swift */,
+				F8A7A8532880125C00531A31 /* PersonalPagePopUpViewController.swift */,
+				F8A7A829287FB1FF00531A31 /* PersonalPageTableViewCell.swift */,
+				F8A7A827287FB1F900531A31 /* PersonalPageModel.swift */,
 			);
 			path = PersonalPageScreen;
 			sourceTree = "<group>";
@@ -408,7 +414,9 @@
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
+				F8A7A8522880111400531A31 /* PersonalPageFlowCoordinator.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
+				F8A7A8542880125C00531A31 /* PersonalPagePopUpViewController.swift in Sources */,
 				F80BAA322879FF47003B905D /* NotifyScreenModel.swift in Sources */,
 				F850FF5C287C1CFB00D837A3 /* NotifyDetailModel.swift in Sources */,
 				F8A7A82A287FB1FF00531A31 /* PersonalPageTableViewCell.swift in Sources */,

@@ -24,4 +24,5 @@ struct MColors {
     static let white = UIColor(red: 1, green: 1, blue: 1, alpha: 1) // #FFFFFF
     
     static let selago = UIColor(red: 0.922, green: 0.91, blue: 0.988, alpha: 1) // #EBE8FC
+    static let foam = UIColor(red: 0.882, green: 0.969, blue: 0.988, alpha: 1) // #E1F7FC
 }

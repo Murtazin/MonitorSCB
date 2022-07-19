@@ -19,7 +19,7 @@ protocol NotifyScreenFlowCoordinatorHandler: AnyObject {
 }
 
 final class NotifyScreenFlowCoordinator: Coordinator {
-    
+        
     var childDependencies: CoordinatorDependencies
     weak var flowListener: CoordinatorFlowListener?
     weak var navigationController: UINavigationController?
@@ -62,5 +62,4 @@ extension NotifyScreenFlowCoordinator: NotifyScreenFlowCoordinatorHandler {
         navigationController?.pushViewController(mainVC, animated: true)
         
     }
-    
 }

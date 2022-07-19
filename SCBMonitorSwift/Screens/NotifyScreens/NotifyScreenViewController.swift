@@ -9,9 +9,9 @@ import UIKit
 
 final class NotifyScreenViewController: UIViewController {
     
-    // MARK: - Private Properties
     weak var notifyScreenCoordinatorHandler: NotifyScreenFlowCoordinatorHandler?
     
+    // MARK: - Private Properties
     private let tableView = UITableView()
     
     private var notify = [NotifyModel(id: 1,
@@ -30,9 +30,7 @@ final class NotifyScreenViewController: UIViewController {
                                       isRead: false,
                                       date: "23/102000")]
     
-    
-    
-    // MARK: - Lyfe Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +39,6 @@ final class NotifyScreenViewController: UIViewController {
         view.backgroundColor = .white
         
         setupTableView()
-        
         
         let dateString: String = "23 Апрель 2000"
         let dateFormatter = NotifyDateFormatter()

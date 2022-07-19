@@ -10,7 +10,13 @@ import Foundation
 struct PDModel {
     let id: Int
     let type: Types
-    let body: String
+    var body: String
+//    let name: String
+//    let employee: String
+//    let phone: String
+//    let email: String
+//    let devices: String
+//    let skills: String
 }
 
 enum Types: Int {
