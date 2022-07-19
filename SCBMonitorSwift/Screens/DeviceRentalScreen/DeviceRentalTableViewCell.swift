@@ -14,7 +14,7 @@ final class DeviceRentalTableViewCell: UITableViewCell {
     // MARK: - Private properties
     private lazy var containterView: UIView = {
         let containerView = UIView()
-        containerView.layer.borderColor = MColors.selago
+        containerView.layer.borderColor = MColors.selago.cgColor
         containerView.layer.borderWidth = 2
         containerView.layer.cornerRadius = 10
         return containerView

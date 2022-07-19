@@ -67,7 +67,7 @@ final class MainScreenViewController: UIViewController {
     }
     
     @objc func calendarDidTap() {
-        mainScreenCoordinatorHandler?.openCalendar()
+//        mainScreenCoordinatorHandler?.openCalendar()
     }
     // MARK: - Setup Buttons
     func setupButtons() {

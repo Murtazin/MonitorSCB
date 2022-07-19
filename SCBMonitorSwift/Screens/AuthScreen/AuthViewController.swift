@@ -101,7 +101,7 @@ private extension AuthViewController {
         loginTextField.borderStyle = .roundedRect
         loginTextField.clipsToBounds = true
         loginTextField.layer.borderWidth = 1.0
-        loginTextField.layer.borderColor = MColors.selago
+        loginTextField.layer.borderColor = MColors.selago.cgColor
         loginTextField.layer.cornerRadius = 15
         
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +118,7 @@ private extension AuthViewController {
         passwordTextField.borderStyle = .roundedRect
         passwordTextField.clipsToBounds = true
         passwordTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.borderColor = MColors.selago
+        passwordTextField.layer.borderColor = MColors.selago.cgColor
         passwordTextField.layer.cornerRadius = 15
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false

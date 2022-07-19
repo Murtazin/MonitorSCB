@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainScreenFlowCoordinatorHandler: AnyObject {
-    func openCalendar()
+//    func openCalendar()
     func openNotif()
     func openGuide()
     func openPersonalPage()
@@ -53,14 +53,14 @@ extension MainScreenFlowCoordinator: CoordinatorFlowListener {
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
-    func openCalendar() {
-        onFlowFinished(coordinator: self)
-        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
-                                                          navigationController,
-                                                          flowListener: self)
-        childDependencies.add(dependency: calendarCoordinator)
-        calendarCoordinator.start()
-    }
+//    func openCalendar() {
+//        onFlowFinished(coordinator: self)
+//        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
+//                                                          navigationController,
+//                                                          flowListener: self)
+//        childDependencies.add(dependency: calendarCoordinator)
+//        calendarCoordinator.start()
+//    }
     
  
     func openPersonalPage() {
