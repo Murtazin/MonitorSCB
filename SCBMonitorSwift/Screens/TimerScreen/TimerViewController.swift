@@ -15,7 +15,9 @@ struct LinePosition {
     let addLineY: CGFloat
 }
 
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
+    
+    weak var timerScreenFlowCoordinatorHandler: TimerScreemFlowCoordinatorHandler?
     
     // MARK: - Private properties
     private let keyForInternalCircleViewAnimation = "keyForInternalCircleViewAnimation"
@@ -140,14 +142,6 @@ private extension TimerViewController {
         internalShape.strokeEnd = 0
         internalShape.lineCap = .round
         view.layer.addSublayer(internalShape)
-        
-        let internalCircleViewShapeCirclePath = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY - 105), radius: 10, startAngle: -(.pi / 2), endAngle: .pi * 2, clockwise: true)
-        
-        internalCircleViewShape.path = internalCircleViewShapeCirclePath.cgPath
-        internalCircleViewShape.lineWidth = 5
-        internalCircleViewShape.strokeColor = MColors.heliotrope.cgColor
-        internalCircleViewShape.fillColor = MColors.white.cgColor
-        view.layer.addSublayer(internalCircleViewShape)
     }
     
     func configureButton() {
@@ -166,6 +160,7 @@ private extension TimerViewController {
         internalShapeAnimation.delegate = self
         
         DispatchQueue.main.async {
+            self.internalShapeAnimation.beginTime = CACurrentMediaTime()
             self.internalShape.add(self.internalShapeAnimation, forKey: self.keyForInternalCircleViewAnimation)
         }
     }
@@ -248,7 +243,7 @@ private extension TimerViewController {
             isAnimationOnGoing.toggle()
         } else {
             startInternalCircleViewAnimation()
-            
+            isAnimationFinished.toggle()
             isAnimationStarted.toggle()
             isAnimationOnGoing.toggle()
         }
