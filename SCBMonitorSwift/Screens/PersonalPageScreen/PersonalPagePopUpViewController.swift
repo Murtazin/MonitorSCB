@@ -89,7 +89,7 @@ class PersonalPagePopupViewController: UIViewController {
         animateShowShadowView()
         animatePresentContainer()
         setupPanGesture()
-
+        setupTapGesture()
     }
     
     // MARK: - Setup view
@@ -208,6 +208,10 @@ class PersonalPagePopupViewController: UIViewController {
             break
         }
     }
+    
+    @objc func handleTapAction(gesture: UITapGestureRecognizer) {
+        animateDismissView()
+    }
 }
 // MARK: - Private
 private extension PersonalPagePopupViewController {
@@ -245,6 +249,13 @@ private extension PersonalPagePopupViewController {
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
         view.addGestureRecognizer(panGesture)
+    }
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapAction(gesture:)))
+        tapGesture.delaysTouchesBegan = false
+        tapGesture.delaysTouchesEnded = false
+        shadowView.addGestureRecognizer(tapGesture)
     }
     
     func animateContainerHeight(_ height: CGFloat) {
