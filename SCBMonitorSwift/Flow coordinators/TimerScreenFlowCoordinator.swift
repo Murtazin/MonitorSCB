@@ -29,7 +29,7 @@ final class TimerScreenFlowCoordinator: Coordinator {
         
         let timerVC = TimerViewController()
         timerVC.timerScreenFlowCoordinatorHandler = self
-        navigationController?.pushViewController(timerVC, animated: false)
+        navigationController?.pushViewController(timerVC, animated: true)
     }
     
 }

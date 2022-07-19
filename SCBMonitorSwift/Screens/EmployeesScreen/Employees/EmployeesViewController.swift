@@ -21,27 +21,31 @@ final class EmployeesViewController: UIViewController {
     // Mocked data -> we can use it in model
     private var data: [EmployeesHeaderViewModel] = [
         EmployeesHeaderViewModel(titleText: "Проект менеджеры",
-                                 employeeModels: [(EmployeeCellViewModel(id: 0, image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
-                                        ],
+                                 employeeModels: [(EmployeeCellViewModel(id: 0, image: UIImage(named: "userMock-icon"), title: "Мария Петрова", subtitle: "Халенок")),
+        (EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Татьяна Сидорова", subtitle: "Женский банк"))
+                                                 ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Дизайнеры",
-                                 employeeModels: [(EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Ульяна Рожкова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Дарья Сухумская", subtitle: "Женский банк"))
-                                        ],
+                                 employeeModels: [(EmployeeCellViewModel(id: 1, image: UIImage(named: "userMock-icon"), title: "Ульяна Рожкова", subtitle: "Халенок")),
+        (EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Дарья Сухумская", subtitle: "Женский банк"))
+                                                 ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Аналитики",
-                                 employeeModels: [(EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Евангелина Сидникова", subtitle: "Халенок")), (EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Тамара Василькова", subtitle: "Женский банк"))
-                                        ],
+                                 employeeModels: [(EmployeeCellViewModel(id: 2, image: UIImage(named: "userMock-icon"), title: "Евангелина Сидникова", subtitle: "Халенок")),
+        (EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Тамара Василькова", subtitle: "Женский банк"))
+                                                 ],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Тестировщики",
-                                 employeeModels: [(EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Юлия Смыр", subtitle: "Халенок")), (EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Пицунда Дранда", subtitle: "Женский банк"))
-                                        ],
+                                 employeeModels: [(EmployeeCellViewModel(id: 3, image: UIImage(named: "userMock-icon"), title: "Юлия Смыр", subtitle: "Халенок")),
+        (EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Пицунда Дранда", subtitle: "Женский банк"))],
                                  isExpanded: false),
         EmployeesHeaderViewModel(titleText: "Frontend-разработчики",
-                                 employeeModels: [(EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Валентин Иванов", subtitle: "Женский банк")), (EmployeeCellViewModel(id: 5, image: UIImage(named: "userMock-icon"), title: "Олег Монгол", subtitle: "Финансовый помощник"))
-                                        ],
+                                 employeeModels: [(EmployeeCellViewModel(id: 4, image: UIImage(named: "userMock-icon"), title: "Валентин Иванов", subtitle: "Женский банк")),
+        (EmployeeCellViewModel(id: 5, image: UIImage(named: "userMock-icon"), title: "Олег Монгол", subtitle: "Финансовый помощник"))
+                                                 ],
                                  isExpanded: false)
     ]
-
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

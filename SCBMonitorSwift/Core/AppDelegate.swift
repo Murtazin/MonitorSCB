@@ -18,16 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        let vc = TimerViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        navController.navigationBar.prefersLargeTitles = true
+        let navController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        
+    
         return true
     }
 }

@@ -36,7 +36,7 @@
 		A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249EC132878212F002D5047 /* CustomSegmentedControl.swift */; };
 		A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */; };
 		A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */; };
-		A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */; };
+		A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInfoView.swift */; };
 		A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */; };
 		A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */; };
 		A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */; };
@@ -45,7 +45,6 @@
 		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
 		A276CCD62886C34300F52DC0 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCA2886C34300F52DC0 /* PersonalAreaViewController.swift */; };
 		A276CCD72886C34300F52DC0 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCB2886C34300F52DC0 /* PersonalAreaHeaderView.swift */; };
-		A276CCD82886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCC2886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift */; };
 		A276CCD92886C34300F52DC0 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCD2886C34300F52DC0 /* EmployeeCustomInformationView.swift */; };
 		A276CCDA2886C34300F52DC0 /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCF2886C34300F52DC0 /* EmployeesViewModel.swift */; };
 		A276CCDB2886C34300F52DC0 /* PersonalAreaInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCD02886C34300F52DC0 /* PersonalAreaInformationModel.swift */; };
@@ -105,7 +104,7 @@
 		A249EC132878212F002D5047 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
 		A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
-		A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaAdditionalInformationView.swift; sourceTree = "<group>"; };
+		A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaAdditionalInfoView.swift; sourceTree = "<group>"; };
 		A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
 		A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
@@ -356,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */,
-				A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift */,
+				A2690636287C1612006FB9F3 /* PersonalAreaAdditionalInfoView.swift */,
 				A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */,
 				A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */,
 			);
@@ -595,7 +594,7 @@
 			files = (
 				A21652AE2886CC2100DC7992 /* DetailCalendarViewController.swift in Sources */,
 				A276CCD72886C34300F52DC0 /* PersonalAreaHeaderView.swift in Sources */,
-				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */,
+				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInfoView.swift in Sources */,
 				A276CCEF2886C35100F52DC0 /* NotifyDetailViewController.swift in Sources */,
 				A2E745F5287D825200C68D89 /* EmployeesViewModel.swift in Sources */,
 				A276CCF92886C35900F52DC0 /* PersonalPageModel.swift in Sources */,
@@ -648,7 +647,6 @@
 				A276CCDF2886C34300F52DC0 /* EmployeesTableViewHeaderView.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
 				A21652AF2886CC2100DC7992 /* CalendarViewController.swift in Sources */,
-				A276CCD82886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
 				A276CCF82886C35900F52DC0 /* PersonalPageTableViewCell.swift in Sources */,
 				A276CCF62886C35900F52DC0 /* PersonalPageViewController.swift in Sources */,

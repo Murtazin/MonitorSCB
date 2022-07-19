@@ -31,7 +31,7 @@ final class AuthScreenFlowCoordinator: Coordinator {
     func start() {
         let authVC = AuthViewController()
         authVC.authScreenFlowCoordinatorHandler = self
-        navigationController?.pushViewController(authVC, animated: false)
+        navigationController?.pushViewController(authVC, animated: true)
     }
 }
 

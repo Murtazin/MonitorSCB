@@ -15,8 +15,8 @@ final class PersonalAreaViewController: UIViewController {
         return headerView
     }()
     
-    private lazy var additionalInformationView: PersonalAreaAdditionalInformationView = {
-        let additionalInformationView = PersonalAreaAdditionalInformationView()
+    private lazy var additionalInformationView: PersonalAreaAdditionalInfoView = {
+        let additionalInformationView = PersonalAreaAdditionalInfoView()
         return additionalInformationView
     }()
 

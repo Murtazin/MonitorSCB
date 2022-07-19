@@ -30,7 +30,7 @@ final class EmployeesScreenFlowCoordinator: Coordinator {
         
         let employeesVC = EmployeesViewController()
         employeesVC.employeesScreenFlowCoordinatorHandler = self
-        navigationController?.pushViewController(employeesVC, animated: false)
+        navigationController?.pushViewController(employeesVC, animated: true)
     }
     
 }

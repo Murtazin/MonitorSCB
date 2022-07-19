@@ -1,5 +1,5 @@
 //
-//  PersonalAreaAdditionalInformationView.swift
+//  PersonalAreaAdditionalInfoView.swift
 //  SCBMonitorSwift
 //
 //  Created by Renat Murtazin on 11.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PersonalAreaAdditionalInformationView: UIView {
+final class PersonalAreaAdditionalInfoView: UIView {
 
     // MARK: - Private properties
     private lazy var birthdayInformationView: EmployeeCustomInformationView = {
@@ -44,7 +44,7 @@ final class PersonalAreaAdditionalInformationView: UIView {
 }
 
 // MARK: - Private
-private extension PersonalAreaAdditionalInformationView {
+private extension PersonalAreaAdditionalInfoView {
     
     func configureInformationViews() {
         birthdayInformationView.configure(by: PersonalAreaInformationModel(image: UIImage(named: "phone"),

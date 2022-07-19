@@ -65,7 +65,6 @@ extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
         calendarCoordinator.start()
     }
     
- 
     func openPersonalPage() {
         onFlowFinished(coordinator: self)
         let personalPageCoordinator = PersonalPageFlowCoordinator(navigationController:
