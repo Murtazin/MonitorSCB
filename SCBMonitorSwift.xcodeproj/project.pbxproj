@@ -36,6 +36,28 @@
 		A26994832882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */; };
 		A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */; };
 		A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */; };
+		A276CCD62886C34300F52DC0 /* PersonalAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCA2886C34300F52DC0 /* PersonalAreaViewController.swift */; };
+		A276CCD72886C34300F52DC0 /* PersonalAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCB2886C34300F52DC0 /* PersonalAreaHeaderView.swift */; };
+		A276CCD82886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCC2886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift */; };
+		A276CCD92886C34300F52DC0 /* EmployeeCustomInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCD2886C34300F52DC0 /* EmployeeCustomInformationView.swift */; };
+		A276CCDA2886C34300F52DC0 /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCCF2886C34300F52DC0 /* EmployeesViewModel.swift */; };
+		A276CCDB2886C34300F52DC0 /* PersonalAreaInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCD02886C34300F52DC0 /* PersonalAreaInformationModel.swift */; };
+		A276CCDD2886C34300F52DC0 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCD32886C34300F52DC0 /* EmployeesViewController.swift */; };
+		A276CCDE2886C34300F52DC0 /* EmployeesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCD42886C34300F52DC0 /* EmployeesCustomTableViewCell.swift */; };
+		A276CCDF2886C34300F52DC0 /* EmployeesTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCD52886C34300F52DC0 /* EmployeesTableViewHeaderView.swift */; };
+		A276CCE22886C34A00F52DC0 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE12886C34A00F52DC0 /* GuideViewController.swift */; };
+		A276CCEB2886C35100F52DC0 /* NotifyScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE42886C35100F52DC0 /* NotifyScreenModel.swift */; };
+		A276CCEC2886C35100F52DC0 /* NotifyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE52886C35100F52DC0 /* NotifyScreenViewController.swift */; };
+		A276CCED2886C35100F52DC0 /* NotifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE62886C35100F52DC0 /* NotifyTableViewCell.swift */; };
+		A276CCEE2886C35100F52DC0 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE72886C35100F52DC0 /* DateFormatter.swift */; };
+		A276CCEF2886C35100F52DC0 /* NotifyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCE92886C35100F52DC0 /* NotifyDetailViewController.swift */; };
+		A276CCF02886C35100F52DC0 /* NotifyDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCEA2886C35100F52DC0 /* NotifyDetailModel.swift */; };
+		A276CCF62886C35900F52DC0 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCF22886C35800F52DC0 /* PersonalPageViewController.swift */; };
+		A276CCF72886C35900F52DC0 /* PersonalPagePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCF32886C35800F52DC0 /* PersonalPagePopUpViewController.swift */; };
+		A276CCF82886C35900F52DC0 /* PersonalPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCF42886C35800F52DC0 /* PersonalPageTableViewCell.swift */; };
+		A276CCF92886C35900F52DC0 /* PersonalPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCF52886C35800F52DC0 /* PersonalPageModel.swift */; };
+		A276CCFC2886C36F00F52DC0 /* PersonalPageFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCFA2886C36F00F52DC0 /* PersonalPageFlowCoordinator.swift */; };
+		A276CCFD2886C36F00F52DC0 /* NotifyScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CCFB2886C36F00F52DC0 /* NotifyScreenFlowCoordinator.swift */; };
 		A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */; };
 		A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */; };
 		A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E745F2287D757100C68D89 /* UIView+Embed.swift */; };
@@ -65,7 +87,7 @@
 		A21E4DD22886956E00CE31FF /* TimerScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModalViewController.swift; sourceTree = "<group>"; };
 		A248EED72880536D00E8F252 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		A248EED92881656900E8F252 /* CALayer+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+Animation.swift"; path = "SCBMonitorSwift/Screens/TimerScreen/CALayer+Animation.swift"; sourceTree = SOURCE_ROOT; };
+		A248EED92881656900E8F252 /* CALayer+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+Animation.swift"; path = "SCBMonitorSwift/Extensions/CALayer+Animation.swift"; sourceTree = SOURCE_ROOT; };
 		A249EC132878212F002D5047 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		A2690632287C082C006FB9F3 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
 		A2690634287C09AD006FB9F3 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
@@ -73,12 +95,35 @@
 		A2690638287C1AC6006FB9F3 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		A269063A287C46F0006FB9F3 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
 		A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
-		A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimeInterval+ObtainFormattedString.swift"; path = "SCBMonitorSwift/Screens/TimerScreen/TimeInterval+ObtainFormattedString.swift"; sourceTree = SOURCE_ROOT; };
+		A26994822882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimeInterval+ObtainFormattedString.swift"; path = "SCBMonitorSwift/Extensions/TimeInterval+ObtainFormattedString.swift"; sourceTree = SOURCE_ROOT; };
 		A26BB1DC2876C34C00F09E8A /* DeviceRentalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalTableViewCell.swift; sourceTree = "<group>"; };
 		A26BB1DF2876F78E00F09E8A /* DeviceRentalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRentalModel.swift; sourceTree = "<group>"; };
+		A276CCCA2886C34300F52DC0 /* PersonalAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAreaViewController.swift; sourceTree = "<group>"; };
+		A276CCCB2886C34300F52DC0 /* PersonalAreaHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAreaHeaderView.swift; sourceTree = "<group>"; };
+		A276CCCC2886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAreaAdditionalInformationView.swift; sourceTree = "<group>"; };
+		A276CCCD2886C34300F52DC0 /* EmployeeCustomInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCustomInformationView.swift; sourceTree = "<group>"; };
+		A276CCCF2886C34300F52DC0 /* EmployeesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
+		A276CCD02886C34300F52DC0 /* PersonalAreaInformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAreaInformationModel.swift; sourceTree = "<group>"; };
+		A276CCD12886C34300F52DC0 /* UIView+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
+		A276CCD32886C34300F52DC0 /* EmployeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		A276CCD42886C34300F52DC0 /* EmployeesCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesCustomTableViewCell.swift; sourceTree = "<group>"; };
+		A276CCD52886C34300F52DC0 /* EmployeesTableViewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewHeaderView.swift; sourceTree = "<group>"; };
+		A276CCE12886C34A00F52DC0 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		A276CCE42886C35100F52DC0 /* NotifyScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyScreenModel.swift; sourceTree = "<group>"; };
+		A276CCE52886C35100F52DC0 /* NotifyScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyScreenViewController.swift; sourceTree = "<group>"; };
+		A276CCE62886C35100F52DC0 /* NotifyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTableViewCell.swift; sourceTree = "<group>"; };
+		A276CCE72886C35100F52DC0 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		A276CCE92886C35100F52DC0 /* NotifyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyDetailViewController.swift; sourceTree = "<group>"; };
+		A276CCEA2886C35100F52DC0 /* NotifyDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyDetailModel.swift; sourceTree = "<group>"; };
+		A276CCF22886C35800F52DC0 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
+		A276CCF32886C35800F52DC0 /* PersonalPagePopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalPagePopUpViewController.swift; sourceTree = "<group>"; };
+		A276CCF42886C35800F52DC0 /* PersonalPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalPageTableViewCell.swift; sourceTree = "<group>"; };
+		A276CCF52886C35800F52DC0 /* PersonalPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalPageModel.swift; sourceTree = "<group>"; };
+		A276CCFA2886C36F00F52DC0 /* PersonalPageFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalPageFlowCoordinator.swift; sourceTree = "<group>"; };
+		A276CCFB2886C36F00F52DC0 /* NotifyScreenFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesScreenFlowCoordinator.swift; sourceTree = "<group>"; };
 		A2E745EF287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCustomTableViewCell.swift; sourceTree = "<group>"; };
-		A2E745F2287D757100C68D89 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Embed.swift"; path = "SCBMonitorSwift/Screens/EmployeesScreen/UIView+Embed.swift"; sourceTree = SOURCE_ROOT; };
+		A2E745F2287D757100C68D89 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Embed.swift"; path = "SCBMonitorSwift/Extensions/UIView+Embed.swift"; sourceTree = SOURCE_ROOT; };
 		A2E745F4287D825200C68D89 /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
 		A2E745F8287D850100C68D89 /* EmployeesTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewHeaderView.swift; sourceTree = "<group>"; };
 		EC1C1E6B00D26A762DA99C35 /* Pods-SCBMonitorSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBMonitorSwift.release.xcconfig"; path = "Target Support Files/Pods-SCBMonitorSwift/Pods-SCBMonitorSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +186,10 @@
 		4529832228730A98004466E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A276CCF12886C35800F52DC0 /* PersonalPageScreen */,
+				A276CCE32886C35100F52DC0 /* NotifyScreens */,
+				A276CCE02886C34A00F52DC0 /* GuideScreen */,
+				A276CCC82886C34300F52DC0 /* EmployeesScreen */,
 				A248EED62880534F00E8F252 /* TimerScreen */,
 				4529832528730ACA004466E8 /* Auth */,
 				455DF37E287424EC00D18B57 /* MainScreen */,
@@ -167,7 +216,8 @@
 				4529832828730B42004466E8 /* AuthModel.swift */,
 				A248EED4287FFEA700E8F252 /* AuthModalViewController.swift */,
 			);
-			path = Auth;
+			name = Auth;
+			path = AuthScreen;
 			sourceTree = "<group>";
 		};
 		4529832C28730CF7004466E8 /* Controls */ = {
@@ -182,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				455DF3852874293E00D18B57 /* Core */,
+				A276CCFB2886C36F00F52DC0 /* NotifyScreenFlowCoordinator.swift */,
+				A276CCFA2886C36F00F52DC0 /* PersonalPageFlowCoordinator.swift */,
 				455DF3832874255000D18B57 /* MainScreenFlowCoordinator.swift */,
 				455DF38728742AF200D18B57 /* AuthScreenFlowCoordinator.swift */,
 				A2B08060287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift */,
@@ -273,6 +325,87 @@
 				A269063C287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift */,
 			);
 			path = PersonalArea;
+			sourceTree = "<group>";
+		};
+		A276CCC82886C34300F52DC0 /* EmployeesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCC92886C34300F52DC0 /* PersonalArea */,
+				A276CCCE2886C34300F52DC0 /* Model */,
+				A276CCD12886C34300F52DC0 /* UIView+Embed.swift */,
+				A276CCD22886C34300F52DC0 /* Employees */,
+			);
+			path = EmployeesScreen;
+			sourceTree = "<group>";
+		};
+		A276CCC92886C34300F52DC0 /* PersonalArea */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCCA2886C34300F52DC0 /* PersonalAreaViewController.swift */,
+				A276CCCB2886C34300F52DC0 /* PersonalAreaHeaderView.swift */,
+				A276CCCC2886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift */,
+				A276CCCD2886C34300F52DC0 /* EmployeeCustomInformationView.swift */,
+			);
+			path = PersonalArea;
+			sourceTree = "<group>";
+		};
+		A276CCCE2886C34300F52DC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCCF2886C34300F52DC0 /* EmployeesViewModel.swift */,
+				A276CCD02886C34300F52DC0 /* PersonalAreaInformationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A276CCD22886C34300F52DC0 /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCD32886C34300F52DC0 /* EmployeesViewController.swift */,
+				A276CCD42886C34300F52DC0 /* EmployeesCustomTableViewCell.swift */,
+				A276CCD52886C34300F52DC0 /* EmployeesTableViewHeaderView.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		A276CCE02886C34A00F52DC0 /* GuideScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCE12886C34A00F52DC0 /* GuideViewController.swift */,
+			);
+			path = GuideScreen;
+			sourceTree = "<group>";
+		};
+		A276CCE32886C35100F52DC0 /* NotifyScreens */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCE42886C35100F52DC0 /* NotifyScreenModel.swift */,
+				A276CCE52886C35100F52DC0 /* NotifyScreenViewController.swift */,
+				A276CCE62886C35100F52DC0 /* NotifyTableViewCell.swift */,
+				A276CCE72886C35100F52DC0 /* DateFormatter.swift */,
+				A276CCE82886C35100F52DC0 /* DetailNotify */,
+			);
+			path = NotifyScreens;
+			sourceTree = "<group>";
+		};
+		A276CCE82886C35100F52DC0 /* DetailNotify */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCE92886C35100F52DC0 /* NotifyDetailViewController.swift */,
+				A276CCEA2886C35100F52DC0 /* NotifyDetailModel.swift */,
+			);
+			path = DetailNotify;
+			sourceTree = "<group>";
+		};
+		A276CCF12886C35800F52DC0 /* PersonalPageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A276CCF22886C35800F52DC0 /* PersonalPageViewController.swift */,
+				A276CCF32886C35800F52DC0 /* PersonalPagePopUpViewController.swift */,
+				A276CCF42886C35800F52DC0 /* PersonalPageTableViewCell.swift */,
+				A276CCF52886C35800F52DC0 /* PersonalPageModel.swift */,
+			);
+			path = PersonalPageScreen;
 			sourceTree = "<group>";
 		};
 		A2E745F1287D652900C68D89 /* Model */ = {
@@ -425,36 +558,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A276CCD72886C34300F52DC0 /* PersonalAreaHeaderView.swift in Sources */,
 				A2690637287C1612006FB9F3 /* PersonalAreaAdditionalInformationView.swift in Sources */,
+				A276CCEF2886C35100F52DC0 /* NotifyDetailViewController.swift in Sources */,
 				A2E745F5287D825200C68D89 /* EmployeesViewModel.swift in Sources */,
+				A276CCF92886C35900F52DC0 /* PersonalPageModel.swift in Sources */,
+				A276CCDB2886C34300F52DC0 /* PersonalAreaInformationModel.swift in Sources */,
 				A248EED5287FFEA700E8F252 /* AuthModalViewController.swift in Sources */,
+				A276CCFD2886C36F00F52DC0 /* NotifyScreenFlowCoordinator.swift in Sources */,
 				A2E745F3287D757100C68D89 /* UIView+Embed.swift in Sources */,
 				A2690633287C082C006FB9F3 /* PersonalAreaViewController.swift in Sources */,
 				4529832928730B43004466E8 /* AuthModel.swift in Sources */,
 				A21847AB2875A9BF00787D4C /* DeviceRentalMainViewController.swift in Sources */,
+				A276CCF72886C35900F52DC0 /* PersonalPagePopUpViewController.swift in Sources */,
 				A269063B287C46F0006FB9F3 /* PersonalAreaInformationModel.swift in Sources */,
 				A248EEDA2881656900E8F252 /* CALayer+Animation.swift in Sources */,
+				A276CCED2886C35100F52DC0 /* NotifyTableViewCell.swift in Sources */,
 				455DF37B2874240800D18B57 /* MainCoordinator.swift in Sources */,
+				A276CCF02886C35100F52DC0 /* NotifyDetailModel.swift in Sources */,
+				A276CCEB2886C35100F52DC0 /* NotifyScreenModel.swift in Sources */,
 				A26BB1DD2876C34C00F09E8A /* DeviceRentalTableViewCell.swift in Sources */,
+				A276CCDE2886C34300F52DC0 /* EmployeesCustomTableViewCell.swift in Sources */,
 				A2E745F9287D850100C68D89 /* EmployeesTableViewHeaderView.swift in Sources */,
+				A276CCFC2886C36F00F52DC0 /* PersonalPageFlowCoordinator.swift in Sources */,
 				455DF3822874250300D18B57 /* MainScreenModel.swift in Sources */,
+				A276CCE22886C34A00F52DC0 /* GuideViewController.swift in Sources */,
+				A276CCDA2886C34300F52DC0 /* EmployeesViewModel.swift in Sources */,
 				4529832E28730D31004466E8 /* DefaultButton.swift in Sources */,
+				A276CCD62886C34300F52DC0 /* PersonalAreaViewController.swift in Sources */,
 				A21E4DD32886956E00CE31FF /* TimerScreenFlowCoordinator.swift in Sources */,
+				A276CCDD2886C34300F52DC0 /* EmployeesViewController.swift in Sources */,
 				A26BB1E02876F78E00F09E8A /* DeviceRentalModel.swift in Sources */,
 				A2E745F0287D5DF200C68D89 /* EmployeesCustomTableViewCell.swift in Sources */,
 				455DF37D2874248B00D18B57 /* CoordinatorDependencies.swift in Sources */,
 				A249EC142878212F002D5047 /* CustomSegmentedControl.swift in Sources */,
 				4529832B28730B81004466E8 /* MColors.swift in Sources */,
+				A276CCEE2886C35100F52DC0 /* DateFormatter.swift in Sources */,
 				455DF38828742AF200D18B57 /* AuthScreenFlowCoordinator.swift in Sources */,
 				A269063D287C4DB3006FB9F3 /* EmployeeCustomInformationView.swift in Sources */,
 				4529832728730B3B004466E8 /* AuthViewController.swift in Sources */,
 				A2690635287C09AD006FB9F3 /* PersonalAreaHeaderView.swift in Sources */,
 				A2B08061287EB5B600410938 /* EmployeesScreenFlowCoordinator.swift in Sources */,
 				A26994832882CCBF00830EA8 /* TimeInterval+ObtainFormattedString.swift in Sources */,
+				A276CCD92886C34300F52DC0 /* EmployeeCustomInformationView.swift in Sources */,
 				A2690639287C1AC6006FB9F3 /* EmployeesViewController.swift in Sources */,
 				A248EED82880536D00E8F252 /* TimerViewController.swift in Sources */,
+				A276CCEC2886C35100F52DC0 /* NotifyScreenViewController.swift in Sources */,
+				A276CCDF2886C34300F52DC0 /* EmployeesTableViewHeaderView.swift in Sources */,
 				4529830F2872FFC7004466E8 /* AppDelegate.swift in Sources */,
+				A276CCD82886C34300F52DC0 /* PersonalAreaAdditionalInformationView.swift in Sources */,
 				455DF380287424FA00D18B57 /* MainScreenViewController.swift in Sources */,
+				A276CCF82886C35900F52DC0 /* PersonalPageTableViewCell.swift in Sources */,
+				A276CCF62886C35900F52DC0 /* PersonalPageViewController.swift in Sources */,
 				455DF3842874255000D18B57 /* MainScreenFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -134,7 +134,7 @@ private extension TimerViewController {
         
         externalShape.path = externalShapeCirclePath.cgPath
         externalShape.lineWidth = 30
-        externalShape.strokeColor = MColors.selago
+        externalShape.strokeColor = MColors.selago.cgColor
         externalShape.fillColor = MColors.transparentWhite
         view.layer.addSublayer(externalShape)
         
@@ -174,8 +174,8 @@ private extension TimerViewController {
             linePath.move(to: CGPoint(x: linePosition.moveX, y: linePosition.moveY))
             linePath.addLine(to: CGPoint(x: linePosition.addLineX, y: linePosition.addLineY))
             lineShape.path = linePath.cgPath
-            lineShape.strokeColor = MColors.selago
-            lineShape.fillColor = MColors.selago
+            lineShape.strokeColor = MColors.selago.cgColor
+            lineShape.fillColor = MColors.selago.cgColor
             lineShape.lineWidth = 2
             view.layer.addSublayer(lineShape)
         }
