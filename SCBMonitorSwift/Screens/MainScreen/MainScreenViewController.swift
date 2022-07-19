@@ -37,6 +37,23 @@ final class MainScreenViewController: UIViewController {
         button.setTitle("Сводная", for: .normal)
         return button
     }()
+    private let employeesScreenButton: DefaultButton = {
+        let button = DefaultButton()
+        button.setTitle("Сотрудники", for: .normal)
+        return button
+    }()
+    private let timerScreenButton: DefaultButton = {
+        let button = DefaultButton()
+        button.setTitle("Таймер", for: .normal)
+        return button
+    }()
+    private let deviceRentalButton: DefaultButton = {
+        let button = DefaultButton()
+        button.setTitle("Аренда устройств", for: .normal)
+        return button
+    }()
+    
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -67,8 +84,21 @@ final class MainScreenViewController: UIViewController {
     }
     
     @objc func calendarDidTap() {
-//        mainScreenCoordinatorHandler?.openCalendar()
+        mainScreenCoordinatorHandler?.openCalendar()
     }
+    
+    @objc func employeesButtonPressed() {
+        mainScreenCoordinatorHandler?.openEmployessButton()
+    }
+    
+    @objc func deviceRentalButtonPressed() {
+        mainScreenCoordinatorHandler?.openDeviceRentButton()
+    }
+    
+    @objc func timerButtonPressed() {
+        mainScreenCoordinatorHandler?.openTimerButton()
+    }
+    
     // MARK: - Setup Buttons
     func setupButtons() {
         defaultButton.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
@@ -115,6 +145,33 @@ final class MainScreenViewController: UIViewController {
             calendarButton.topAnchor.constraint(equalTo: personalProfileButton.bottomAnchor, constant: 20),
             calendarButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             view.rightAnchor.constraint(equalTo: calendarButton.rightAnchor, constant: 16)
+        ])
+        
+        timerScreenButton.addTarget(self, action: #selector(timerButtonPressed), for: .touchUpInside)
+        view.addSubview(timerScreenButton)
+        
+        NSLayoutConstraint.activate([
+            defaultButton.topAnchor.constraint(equalTo: timerScreenButton.bottomAnchor, constant: 20),
+            timerScreenButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            view.rightAnchor.constraint(equalTo: timerScreenButton.rightAnchor, constant: 16)
+        ])
+        
+        deviceRentalButton.addTarget(self, action: #selector(deviceRentalButtonPressed), for: .touchUpInside)
+        view.addSubview(deviceRentalButton)
+        
+        NSLayoutConstraint.activate([
+            timerScreenButton.topAnchor.constraint(equalTo: deviceRentalButton.bottomAnchor, constant: 20),
+            deviceRentalButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            view.rightAnchor.constraint(equalTo: deviceRentalButton.rightAnchor, constant: 16)
+        ])
+        
+        employeesScreenButton.addTarget(self, action: #selector(employeesButtonPressed), for: .touchUpInside)
+        view.addSubview(employeesScreenButton)
+
+        NSLayoutConstraint.activate([
+            deviceRentalButton.topAnchor.constraint(equalTo: employeesScreenButton.bottomAnchor, constant: 20),
+            employeesScreenButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            view.rightAnchor.constraint(equalTo: employeesScreenButton.rightAnchor, constant: 16)
         ])
     }
 }

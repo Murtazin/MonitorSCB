@@ -56,7 +56,7 @@ final class PersonalPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = MColors.spray
+        view.backgroundColor = MColors.selago
         
         setupBottomView()
         setupTopView()

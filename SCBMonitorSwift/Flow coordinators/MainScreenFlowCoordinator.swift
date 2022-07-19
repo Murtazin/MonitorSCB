@@ -8,11 +8,14 @@
 import UIKit
 
 protocol MainScreenFlowCoordinatorHandler: AnyObject {
-//    func openCalendar()
+    func openCalendar()
     func openNotif()
     func openGuide()
     func openPersonalPage()
     func didSuccessLogin()
+    func openEmployessButton()
+    func openDeviceRentButton()
+    func openTimerButton()
 }
 
 final class MainScreenFlowCoordinator: Coordinator {
@@ -53,14 +56,14 @@ extension MainScreenFlowCoordinator: CoordinatorFlowListener {
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
-//    func openCalendar() {
-//        onFlowFinished(coordinator: self)
-//        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
-//                                                          navigationController,
-//                                                          flowListener: self)
-//        childDependencies.add(dependency: calendarCoordinator)
-//        calendarCoordinator.start()
-//    }
+    func openCalendar() {
+        onFlowFinished(coordinator: self)
+        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
+                                                          navigationController,
+                                                          flowListener: self)
+        childDependencies.add(dependency: calendarCoordinator)
+        calendarCoordinator.start()
+    }
     
  
     func openPersonalPage() {
@@ -97,5 +100,28 @@ extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
         childDependencies.add(dependency: authScreenCoordinator)
         authScreenCoordinator.start()
     }
- 
+    
+    func openEmployessButton() {
+        onFlowFinished(coordinator: self)
+        let employeesScreenCoordinator = EmployeesScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: employeesScreenCoordinator)
+        employeesScreenCoordinator.start()
+    }
+    
+    func openDeviceRentButton() {
+        onFlowFinished(coordinator: self)
+        let devideRentalVC = DeviceRentalMainViewController()
+        navigationController?.pushViewController(devideRentalVC, animated: true)
+    }
+    
+    func openTimerButton() {
+        onFlowFinished(coordinator: self)
+        let timerFlowCoordinator = TimerScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: timerFlowCoordinator)
+        timerFlowCoordinator.start()
+    }
 }
