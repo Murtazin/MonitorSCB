@@ -41,16 +41,22 @@ extension AuthScreenFlowCoordinator: CoordinatorFlowListener {
     func onFlowFinished(coordinator: Coordinator) {
         childDependencies.remove(dependency: coordinator)
         
-        flowListener?.onFlowFinished(coordinator: coordinator)
+//        flowListener?.onFlowFinished(coordinator: coordinator)
     }
 }
 
 // MARK: - AuthScreenFlowCoordinatorHandler
 extension AuthScreenFlowCoordinator: AuthScreenFlowCoordinatorHandler {
+    
     func didSuccessLogin() {
         UserDefaults.standard.set(true, forKey: "isUserLogged")
         
         onFlowFinished(coordinator: self)
+        let mainScreenCoordinator = MainScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: mainScreenCoordinator)
+        mainScreenCoordinator.start()
     }
     
     func presentAuthModalViewController() {

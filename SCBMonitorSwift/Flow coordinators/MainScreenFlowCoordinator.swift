@@ -8,7 +8,11 @@
 import UIKit
 
 protocol MainScreenFlowCoordinatorHandler: AnyObject {
-//    func goToPersonalCabinetButtonDidTap()
+    func openCalendar()
+    func openNotif()
+    func openGuide()
+    func openPersonalPage()
+    func didSuccessLogin()
 }
 
 final class MainScreenFlowCoordinator: Coordinator {
@@ -16,6 +20,8 @@ final class MainScreenFlowCoordinator: Coordinator {
     var childDependencies: CoordinatorDependencies
     weak var flowListener: CoordinatorFlowListener?
     weak var navigationController: UINavigationController?
+    
+    weak var mainVC: MainScreenViewController?
     
     init(navigationController: UINavigationController?,
          childDependencies: CoordinatorDependencies = DefaultCoordinatorDependencies(),
@@ -29,6 +35,7 @@ final class MainScreenFlowCoordinator: Coordinator {
     func start() {
         
         let mainVC = MainScreenViewController()
+        self.mainVC  = mainVC
         mainVC.mainScreenCoordinatorHandler = self
         navigationController?.pushViewController(mainVC, animated: false)
     }
@@ -37,21 +44,58 @@ final class MainScreenFlowCoordinator: Coordinator {
 
 // MARK: - CoordinatorFlowListener
 extension MainScreenFlowCoordinator: CoordinatorFlowListener {
-    
     func onFlowFinished(coordinator: Coordinator) {
         childDependencies.remove(dependency: coordinator)
         
-        flowListener?.onFlowFinished(coordinator: coordinator)
+//        flowListener?.onFlowFinished(coordinator: coordinator)
     }
 }
 
 // MARK: - MainScreenFlowCoordinatorHandler
 extension MainScreenFlowCoordinator: MainScreenFlowCoordinatorHandler {
+    func openCalendar() {
+        onFlowFinished(coordinator: self)
+        let calendarCoordinator = CalendarFlowCoordinator(navigationController:
+                                                          navigationController,
+                                                          flowListener: self)
+        childDependencies.add(dependency: calendarCoordinator)
+        calendarCoordinator.start()
+    }
+    
  
-// Example
-//    func goToPersonalCabinetButtonDidTap() {
-//        let personalViewConroller = PersonalCabinetViewController()
-//        navigationController?.pushViewController(personalViewConroller, animated: true)
-//    }
+    func openPersonalPage() {
+        onFlowFinished(coordinator: self)
+        let personalPageCoordinator = PersonalPageFlowCoordinator(navigationController:
+                                                            navigationController,
+                                                            flowListener: self)
+        childDependencies.add(dependency: personalPageCoordinator)
+        personalPageCoordinator.start()
+    }
+    
+    func openGuide() {
+        onFlowFinished(coordinator: self)
+        let guideVC = GuideScreenViewController()
+        navigationController?.pushViewController(guideVC, animated: true)
+    }
+    
+    func openNotif() {
+        onFlowFinished(coordinator: self)
+        let notifyScreenCoordinator = NotifyScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: notifyScreenCoordinator)
+        notifyScreenCoordinator.start()
+    }
+    
+    func didSuccessLogin() {
+//        UserDefaults.standard.set(true, forKey: "isUserLogged")
+        
+        onFlowFinished(coordinator: self)
+        let authScreenCoordinator = AuthScreenFlowCoordinator(navigationController:
+                                                              navigationController,
+                                                              flowListener: self)
+        childDependencies.add(dependency: authScreenCoordinator)
+        authScreenCoordinator.start()
+    }
  
 }
